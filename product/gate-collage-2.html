@@ -1,0 +1,402 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wght@100..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Give+You+Glory&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <script src="/assets/js/main.js"></script>
+    <title>Izzy Sempill</title>
+
+    <style>
+
+        button {
+            background: none;
+	        color: inherit;
+            border: none;
+            padding: 0;
+            font: inherit;
+            cursor: pointer;
+            outline: inherit;
+        }
+
+        .product-layout {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .product-layout .product-image-section {
+            flex: 1 0 360px;
+            box-sizing: border-box;
+            max-width: 100%;
+        }   
+
+        .product-layout .product-details-section {
+            flex: 1 0 360px;
+            box-sizing: border-box;
+            max-width: 100%;
+        }
+
+        /* Headings */
+        .product-layout .product-details-section .main-product-details-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .product-layout .product-details-section .main-product-details-wrapper .product-details-headings {
+            display: block;
+            font-size: 18pt;
+            color: var(--font-colour-heading);
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .product-layout .product-details-section .main-product-details-wrapper .product-details-subheading {
+            display: block;
+            color: var(--font-colour-subheading-light);
+            font-size: 12pt;
+        }
+
+        .product-layout .product-details-section .main-product-details-wrapper .product-details-price {
+            font-size: 15pt;
+            color: var(--font-colour-heading);
+        }
+
+        /* Buy Option */
+        .product-layout .product-details-section .product-details-buy-option button {
+            width: 100%;
+            height: 50px;
+            background: var(--theme-green);
+            border-radius: 8px;
+            color: white;
+            font-size: 14pt;
+            font-weight: 500;
+            letter-spacing: 1px;
+            opacity: 0.95;
+            box-shadow: rgba(0, 0, 0, 0.06) 0px 1px 3px, rgba(0, 0, 0, 0.12) 0px 1px 2px;
+        }
+
+        .product-layout .product-details-section .product-details-buy-option button.add {
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .product-layout .product-details-section .product-details-buy-option button.add.is-adding {
+            cursor: default;
+        }
+
+        .product-layout .product-details-section .product-details-buy-option button.add.is-adding span.add {
+            display: none;
+        }
+
+        .product-layout .product-details-section .product-details-buy-option button.add:not(.is-adding) span.adding {
+            display: none;
+        }
+
+        .product-layout .product-details-section .product-details-buy-option button.view {
+            margin-bottom: 20px;
+            background: white;
+            color: var(--theme-green);
+            border: 1px solid var(--theme-green);
+        }
+
+        .product-layout .product-details-section .product-details-buy-option button:not(.is-adding):hover {
+            opacity: 1;
+        }
+
+        .product-layout .product-details-section .product-details-buy-option button:not(.is-adding):active {
+            opacity: 1;
+            transform: translateY(1px);
+        }
+       
+        /* Description */
+        .product-layout .product-details-section .product-details-description {
+        
+            background: var(--theme-blue);
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid var(--theme-blue-border);
+
+        }
+
+        .product-layout .product-details-section .product-details-description .product-details-description-title {
+            display: block;
+            color: var(--font-colour-heading);
+            font-size: 13pt;
+            font-weight: 500;
+            padding-bottom: 6px;
+        }
+
+        .product-layout .product-details-section .product-details-description .product-details-description-detail {
+            display: block;
+            color: var(--font-colour-subheading-light);
+            padding: 6px 0;
+        }
+
+        /*
+         * Slideshow
+         */
+        .image-grid-layout {
+            justify-content: center;
+        }
+
+        .image-grid-layout .slideshow-image-wrapper {
+            justify-content: center;
+        }
+
+        .image-grid-layout .slideshow-image-wrapper img {
+            max-width: 100%;
+            max-height: 700px;
+        }
+
+
+    </style>
+
+</head>
+<body>
+    
+    <!-- Side Bar -->
+    <div id="sidebar-shield">
+
+    <!-- Side Bar -->
+    <div id="sidebar">
+
+        <div class="sidebar-header">
+            <span class="close-icon" onclick="closeSidebar()">
+                <img src="assets/icons/close.svg" height="24">
+            </span>
+            <span class="logo logo-font">
+                Izzy Sempill
+            </span>
+        </div>
+
+        <div class="sidebar-content">
+
+            <div class="sidebar-items">
+
+                <div class="nav-layout">
+                    <ul>
+                        <li><a href="/">About</a></li>
+                        <li><a href="/updates">Updates</a></li>
+                        <li><a href="/printshop">Print Shop</a></li>
+                        <li><a href="/cart">My Cart</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <!-- Page Content -->
+    <div id="page-container">
+
+        <!-- Top Bar -->
+        <div id="topbar">
+
+    <!-- Standard Content -->
+    <div class="content-wrapper non-mobile">
+
+        <span class="logo logo-font" onclick="window.location=window.location.origin">
+            Izzy Sempill
+        </span>
+    
+        <div class="nav-layout">
+            <ul>
+                <li><a href="/">About</a></li>
+                <li><a href="/updates">Updates</a></li>
+                <li><a href="/printshop">Print Shop</a></li>
+                <li><a href="/cart"> <img src="/assets/icons/cart.svg"></a></li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <!-- Standard Content -->
+    <div class="content-wrapper mobile-only">
+        <div class="mobile-options">
+            <span class="burger-menu" onclick="openSidebar()">
+                <img src="assets/icons/burger-menu.svg" height="24">
+            </span>
+            <span class="logo logo-font" onclick="window.location=window.location.origin">
+                Izzy Sempill
+            </span>    
+        </div>
+    </div>
+
+
+</div>
+
+        <!-- Main Content -->
+        <div id="main-content" class="home-page">
+            
+            <!-- Page Subheading -->
+            <div class="main-content-subheading">
+                <div class="main"></div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="main-content-body">
+
+                <div class="product-layout">
+
+                    <div class="product-image-section">
+
+                        <!-- Items -->
+                        <div class="image-grid-layout"> 
+                            <!-- Each Item as a grid -->
+                            <div class="slideshow-wrapper ">
+
+    <div class="preview-images">
+        
+            <div class="preview-image">
+                <img src="/assets/images/collages/gate_collage_2.jpg" class="image active">
+            </div>
+        
+            <div class="preview-image">
+                <img src="/assets/images/collages/gate_collage_2_frame.jpg" class="image">
+            </div>
+        
+    </div>
+
+    <div class="slideshow">
+
+        <!-- Previous Button -->
+        <div class="btn previous-btn">
+            <svg width="32px" height="32px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 6L9 12L15 18" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+
+        <!-- Slideshow Images -->
+        <div class="slideshow-image-wrapper">
+            
+                <img src="/assets/images/collages/gate_collage_2.jpg" class="image active">
+            
+                <img src="/assets/images/collages/gate_collage_2_frame.jpg" class="image">
+            
+        </div>
+       
+        <!-- Next Button -->
+        <div class="btn next-btn">
+            <svg width="32px" height="32px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 6L15 12L9 18" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+
+        <!-- Slideshow Dots -->
+        <div class="dots-wrapper">
+            
+                <div class="dot active"></div>
+            
+                <div class="dot"></div>
+            
+        </div> 
+        
+    </div>
+
+</div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Product Details -->
+                    <div class="product-details-section">
+
+                        <div class="main-product-details-wrapper">
+                            <div>
+                                <span class="product-details-subheading">Collages</span>
+                                <span class="product-details-headings">Gate collage 2</span>
+                            </div>
+                            <span class="product-details-price">£12</span>
+                        </div>
+                        
+                        <div class="product-details-buy-option">
+                            <button class="add" onclick="addToCart(this)">
+                                <span class="add">Add to cart</span>
+                                <span class="adding">Added to cart</span>
+                            </button>
+                            <button class="view" onclick="window.location='/cart'">View cart</button>
+                        </div>
+
+                        <div class="product-details-description">
+                            <span class="product-details-description-title">About this piece</span>
+
+                            
+                                <span class="product-details-description-detail">A4 print</span>
+                            
+                                <span class="product-details-description-detail">£12</span>
+                            
+                                <span class="product-details-description-detail">230gsm Pinnacle matte paper</span>
+                            
+                                <span class="product-details-description-detail">Shipping will be calculated during checkout</span>
+                            
+                                <span class="product-details-description-detail">Print of collage, originally created from artists' own photographs.</span>
+                            
+
+                        </div>
+
+                    </div>
+
+                </div>
+                
+            </div>
+
+            <!-- Footer -->
+            <div id="footer">
+
+    <div class="content-wrapper">
+
+        <span class="logo logo-font logo-font-white">Izzy Sempill</span>
+        <div class="nav nav-layout">
+            <ul>
+                <li><a href="/">About</a></li>
+                <li><a href="/updates">Updates</a></li>
+                <li><a href="/printshop">Print Shop</a></li>
+                <li><a>Contact</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+</div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        function addToCart(btnEl) {
+
+            //cant add if "is adding"
+            if(btnEl.classList.contains('is-adding')) return;
+
+            //add the product to the cart
+            let stripeId = '@@stripeId';
+            btnEl.classList.add('is-adding');
+            addProductToCart(stripeId, 1)
+
+            //wait for 3 seconds before allowing the cart to be added to again
+            setTimeout(() => {
+                btnEl.classList.remove('is-adding');
+            }, 3000)
+
+        }
+
+    </script>
+
+</body>
+
+</html>

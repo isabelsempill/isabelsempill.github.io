@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wght@100..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Give+You+Glory&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <script src="assets/js/main.js"></script>
+    <title>Izzy Sempill</title>
+
+    <style>
+
+        #main-content .main-content-header .bg-image {
+            background-image: url(assets/images/headers/cover-updates.jpg);
+            background-position-y: bottom;
+        }
+
+        .recent-work-image-grid {
+            display: grid;
+            height: 615px;
+            width: calc(100% - 15px);
+            gap: 15px;
+            grid-template-columns: 40% 60%;
+            grid-template-rows: 300px 300px;
+        }
+
+        .recent-work-image-grid div {
+            background-color: #f2f2f2;
+        }
+
+        .recent-work-image-grid div:nth-child(2) {
+            grid-row: span 2;
+        }
+
+        .recent-work-image-grid div img {
+            height: 100%;
+            width: 100%
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <!-- Side Bar -->
+    <div id="sidebar-shield">
+
+    <!-- Side Bar -->
+    <div id="sidebar">
+
+        <div class="sidebar-header">
+            <span class="close-icon" onclick="closeSidebar()">
+                <img src="assets/icons/close.svg" height="24">
+            </span>
+            <span class="logo logo-font">
+                Izzy Sempill
+            </span>
+        </div>
+
+        <div class="sidebar-content">
+
+            <div class="sidebar-items">
+
+                <div class="nav-layout">
+                    <ul>
+                        <li><a href="/">About</a></li>
+                        <li><a href="/updates">Updates</a></li>
+                        <li><a href="/printshop">Print Shop</a></li>
+                        <li><a href="/cart">My Cart</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <!-- Page Content -->
+    <div id="page-container">
+
+        <!-- Top Bar -->
+        <div id="topbar">
+
+    <!-- Standard Content -->
+    <div class="content-wrapper non-mobile">
+
+        <span class="logo logo-font" onclick="window.location=window.location.origin">
+            Izzy Sempill
+        </span>
+    
+        <div class="nav-layout">
+            <ul>
+                <li><a href="/">About</a></li>
+                <li><a href="/updates">Updates</a></li>
+                <li><a href="/printshop">Print Shop</a></li>
+                <li><a href="/cart"> <img src="/assets/icons/cart.svg"></a></li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <!-- Standard Content -->
+    <div class="content-wrapper mobile-only">
+        <div class="mobile-options">
+            <span class="burger-menu" onclick="openSidebar()">
+                <img src="assets/icons/burger-menu.svg" height="24">
+            </span>
+            <span class="logo logo-font" onclick="window.location=window.location.origin">
+                Izzy Sempill
+            </span>    
+        </div>
+    </div>
+
+
+</div>
+
+        <!-- Main Content -->
+        <div id="main-content" class="home-page">
+            
+            <div class="main-content-header parallax-scroll-off">
+                <div class="bg-image"></div>
+                <div class="main-content-title">
+                    <span>Updates</span>
+                </div>
+            </div>
+
+            <!-- Page Subheading -->
+            <div class="main-content-subheading">
+                <span class="text-block-subheading">Exhibitions, projects, work in progress</span>
+            </div>
+
+            <div class="main-content-body">
+
+                <!-- Into the Light Intro -->
+                <div class="content-element text-block" style="padding-top:24px">
+                    <p class="text-block-heading" style="margin-top: 0;">Into the Light</p>
+                    <p class="text-block-subheading">Platform One Gallery, Todmorden</p>     
+                    <p class="text-block-subheading">March - April 2025</p>                        
+                    <p class="text-block-content">Recently I have been working with texture paste and watercolour on wood boards. Three pieces have been included in Platform One Gallery’s open exhibition, Into the Light, which celebrates and welcomes the Spring. The pink/orange piece is inspired by sunset skies, and the two landscapes aim to capture the ever-changing light in the beautiful Calder Valley.</p>
+                    <p class="text-block-content">More images coming soon!</p>
+                </div>
+
+                <!-- Additional Images (Default Screens) -->
+                <div class="content-element image-grid-layout non-mobile" style="padding-bottom: 28px;">
+                    <div class="grid-item"><img src="assets/images/exhibitions/platform-one/p1.jpg"></div>
+                    <div class="grid-item"><img src="assets/images/exhibitions/platform-one/p2.jpg"></div>
+                    <div class="grid-item"><img src="assets/images/exhibitions/platform-one/p3.jpg"></div>
+                </div>
+
+                <!-- Additional Images (Mobile) -->
+                <div class="image-hscroller mobile-only" style="padding-bottom: 28px;">
+                    <div class="scroll-wrapper">
+                        <div class="hscroller-item"><img src="assets/images/exhibitions/platform-one/p1.jpg"></div>
+                        <div class="hscroller-item"><img src="assets/images/exhibitions/platform-one/p2.jpg"></div>
+                        <div class="hscroller-item"><img src="assets/images/exhibitions/platform-one/p3.jpg"></div>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <!-- Coming Soon Intro -->
+                <div class="content-element text-block" style="padding-top:24px">
+                    <p class="text-block-heading" style="margin-top: 0;">Coming soon</p>                      
+                    <p class="text-block-content">Works in progress: a collection of original textured artworks will be available to buy on my site soon. Watch this space!</p>
+                </div>
+
+                <!-- Additional Images (Default Screens) -->
+                <div class="content-element image-grid-layout non-mobile" style="padding-bottom: 28px;">
+                    <div class="grid-item"><img src="assets/images/exhibitions/coming-soon/soon_1.jpg"></div>
+                    <div class="grid-item"><img src="assets/images/exhibitions/coming-soon/soon_2.jpg"></div>
+                    <div class="grid-item"><img src="assets/images/exhibitions/coming-soon/soon_3.jpg"></div>
+                </div>
+
+                <!-- Additional Images (Mobile) -->
+                <div class="image-hscroller mobile-only" style="padding-bottom: 28px;">
+                    <div class="scroll-wrapper">
+                        <div class="hscroller-item"><img src="assets/images/exhibitions/coming-soon/soon_1.jpg"></div>
+                        <div class="hscroller-item"><img src="assets/images/exhibitions/coming-soon/soon_2.jpg"></div>
+                        <div class="hscroller-item"><img src="assets/images/exhibitions/coming-soon/soon_3.jpg"></div>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <!-- Blackburn Open Exhibition Intro -->
+                <div class="content-element text-block" style="padding-top:24px">
+                    <p class="text-block-heading" style="margin-top: 0;">Blackburn Open Exhibition</p>
+                    <p class="text-block-subheading">Blackburn Museum & Art Gallery</p>     
+                    <p class="text-block-subheading">Jan - March 2025</p>                        
+                    <p class="text-block-content">My acrylic painting of my Nan's living room was included in the BM&AG 2025 Open Exhibition. This scene is special to me because her house has been such a stable and consistent place throughout my life, but I also think it's a familiar and comforting scene that many people can recognise or identify with in their own ways.</p>
+                </div>
+
+                <!-- Additional Images (Default Screens) -->
+                <div class="content-element image-grid-layout non-mobile" style="padding-bottom: 28px;">
+                    <div class="grid-item"><img src="assets/images/exhibitions/blackburn/blackburn_1.png"></div>
+                    <div class="grid-item"><img src="assets/images/exhibitions/blackburn/blackburn_2.png"></div>
+                    <div class="grid-item"><img src="assets/images/exhibitions/blackburn/blackburn_4.png"></div>
+                </div>
+
+                <!-- Additional Images (Mobile) -->
+                <div class="image-hscroller mobile-only" style="padding-bottom: 28px;">
+                    <div class="scroll-wrapper">
+                        <div class="hscroller-item"><img src="assets/images/exhibitions/blackburn/blackburn_1.png"></div>
+                        <div class="hscroller-item"><img src="assets/images/exhibitions/blackburn/blackburn_2.png"></div>
+                        <div class="hscroller-item"><img src="assets/images/exhibitions/blackburn/blackburn_3.png"></div>
+                        <div class="hscroller-item"><img src="assets/images/exhibitions/blackburn/blackburn_4.png"></div>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <!-- Postcard Art Intro -->
+                <div class="content-element text-block" style="padding-top:24px">
+                    <p class="text-block-heading" style="margin-top: 0;">Postcard Art</p>
+                    <p class="text-block-subheading">Water Street Gallery, Todmorden</p>     
+                    <p class="text-block-subheading">Nov 2024 - March 2025</p>                        
+                    <p class="text-block-content">I created two emulsion transfers of wintery scenes for the Postcard Art call-out at Water Street Gallery. These were displayed alongside larger pieces from the Seeds of Change exhibition.</p>
+                    <p class="text-block-content">I love postcard-sized art because it's accessible, affordable and welcomes a broad range of styles and mediums.</p>
+                    <p class="text-block-content">Emulsion transfers can have an ethereal, worn quality to them. For me, they show how photographs can represent faded memories. I think transfers work well as small-scale pieces because, when leaning in and looking closely, viewers will notice the layers, marks and textures created naturally through the process.</p>
+                </div>
+
+                <!-- Additional Images (Default Screens) -->
+                <div class="content-element recent-work-image-grid non-mobile">
+                    <div><img src="assets/images/exhibitions/water-street-gallery/ws2.jpg"></div>
+                    <div><img src="assets/images/exhibitions/water-street-gallery/ws1.jpg"></div>
+                    <div><img src="assets/images/exhibitions/water-street-gallery/ws4.jpg"></div>
+                </div>
+
+                <!-- Additional Images (Mobile) -->
+                <div class="image-hscroller mobile-only">
+                    <div class="scroll-wrapper">
+                        <div class="hscroller-item"><img src="assets/images/exhibitions/water-street-gallery/ws1.jpg"></div>
+                        <div class="hscroller-item"><img src="assets/images/exhibitions/water-street-gallery/ws2.jpg"></div>
+                        <div class="hscroller-item"><img src="assets/images/exhibitions/water-street-gallery/ws3.jpg"></div>
+                        <div class="hscroller-item"><img src="assets/images/exhibitions/water-street-gallery/ws4.jpg"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Footer -->
+            <div id="footer">
+
+    <div class="content-wrapper">
+
+        <span class="logo logo-font logo-font-white">Izzy Sempill</span>
+        <div class="nav nav-layout">
+            <ul>
+                <li><a href="/">About</a></li>
+                <li><a href="/updates">Updates</a></li>
+                <li><a href="/printshop">Print Shop</a></li>
+                <li><a>Contact</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

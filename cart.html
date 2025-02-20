@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wght@100..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Give+You+Glory&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <script src="/assets/js/main.js"></script>
+    <script src="https://js.stripe.com/v3"></script>
+    <title>Izzy Sempill</title>
+
+    <style>
+
+        #main-content .main-content-body .cart-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            gap: 30px;
+        }
+
+        #main-content .main-content-body .cart-wrapper .cart-flex-item {
+            flex: 1 0 500px;
+        }
+
+        #main-content .main-content-body .cart-wrapper .product-wrapper {
+            display: grid;
+            gap: 10px;
+            grid-template-columns: auto 1fr;
+            grid-template-rows: auto 1fr;
+        }
+
+        #main-content .main-content-body .cart-wrapper .product-wrapper .product-image {
+            grid-row: span 2;
+            height: 225px;
+            background: var(--theme-blue);
+            padding: 5px;
+        }
+
+        #main-content .main-content-body .cart-wrapper .product-wrapper .product-image img {
+            height: 100%;
+        }
+
+        #main-content .main-content-body .cart-wrapper .product-wrapper .product-details {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #main-content .main-content-body .cart-wrapper .product-wrapper .product-title {
+            margin-bottom: 10px;
+        }
+
+        #main-content .main-content-body .cart-wrapper .product-wrapper .product-title .title {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        #main-content .main-content-body .cart-wrapper .product-wrapper .product-title .price {
+            font-size: 14px;
+        }
+
+        #main-content .main-content-body .cart-wrapper .product-wrapper .product-totals .quantity-wrapper .amount {
+            margin-left: 5px;
+        }
+
+        #main-content .main-content-body .cart-wrapper .product-wrapper .product-totals .total {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        #main-content .main-content-body .cart-wrapper .payment-wrapper {
+            font-size: 16px;
+        }
+
+        #main-content .main-content-body .cart-wrapper .payment-wrapper .total-wrapper {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+
+        #main-content .main-content-body .cart-wrapper .payment-wrapper .checkout-message {
+
+            background: var(--theme-blue);
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid var(--theme-blue-border);
+            margin-bottom: 10px;
+
+            font-size: 14px;
+            text-align: center;
+        }
+
+
+        /* Buy Option */
+        .checkout-button {
+            width: 100%;
+            height: 50px;
+            background: var(--theme-green);
+            border-radius: 8px;
+            color: white;
+            font-size: 14pt;
+            font-weight: 500;
+            letter-spacing: 1px;
+            opacity: 0.95;
+            box-shadow: rgba(0, 0, 0, 0.06) 0px 1px 3px, rgba(0, 0, 0, 0.12) 0px 1px 2px;
+
+            padding: 0;
+            font: inherit;
+            cursor: pointer;
+            outline: none;
+            border: none;
+        }
+
+        .checkout-button:active {
+            opacity: 1;
+            transform: translateY(1px);
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <!-- Side Bar -->
+    <div id="sidebar-shield">
+
+    <!-- Side Bar -->
+    <div id="sidebar">
+
+        <div class="sidebar-header">
+            <span class="close-icon" onclick="closeSidebar()">
+                <img src="assets/icons/close.svg" height="24">
+            </span>
+            <span class="logo logo-font">
+                Izzy Sempill
+            </span>
+        </div>
+
+        <div class="sidebar-content">
+
+            <div class="sidebar-items">
+
+                <div class="nav-layout">
+                    <ul>
+                        <li><a href="/">About</a></li>
+                        <li><a href="/updates">Updates</a></li>
+                        <li><a href="/printshop">Print Shop</a></li>
+                        <li><a href="/cart">My Cart</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <!-- Page Content -->
+    <div id="page-container">
+
+        <!-- Top Bar -->
+        <div id="topbar">
+
+    <!-- Standard Content -->
+    <div class="content-wrapper non-mobile">
+
+        <span class="logo logo-font" onclick="window.location=window.location.origin">
+            Izzy Sempill
+        </span>
+    
+        <div class="nav-layout">
+            <ul>
+                <li><a href="/">About</a></li>
+                <li><a href="/updates">Updates</a></li>
+                <li><a href="/printshop">Print Shop</a></li>
+                <li><a href="/cart"> <img src="/assets/icons/cart.svg"></a></li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <!-- Standard Content -->
+    <div class="content-wrapper mobile-only">
+        <div class="mobile-options">
+            <span class="burger-menu" onclick="openSidebar()">
+                <img src="assets/icons/burger-menu.svg" height="24">
+            </span>
+            <span class="logo logo-font" onclick="window.location=window.location.origin">
+                Izzy Sempill
+            </span>    
+        </div>
+    </div>
+
+
+</div>
+
+        <!-- Main Content -->
+        <div id="main-content" class="home-page">
+            
+            <!-- Page Subheading -->
+            <div class="main-content-subheading">
+                <span class="text-block-subheading">Your Cart</span>
+            </div>
+
+            <!-- Main Content -->
+            <div class="main-content-body">
+
+                <div class="cart-wrapper">
+
+                    <div id="products-wrapper" class="products-wrapper cart-flex-item">
+                        <!-- Product Template -->
+                        <template id="product-template">
+                            <div class="product-wrapper">
+                                            
+                                <div class="product-image">
+                                    <img class="template-value-img-src">
+                                </div>
+                                <div class="product-title product-details">
+                                    <span class="title template-value-title"></span>
+                                    <span class="price template-value-price"></span>
+                                </div>
+                                <div class="product-totals product-details">
+                                    <div class="quantity-wrapper">
+                                        <span>Quantity:</span>
+                                        <span class="amount template-value-quantity"></span>
+                                    </div>
+                                    <span class="total template-value-total"></span>
+                                </div>
+                            </div>
+                            <div class="divider"></div>
+                        </template>
+                    </div>
+
+                     <!-- Product Details -->
+                    <div class="payment-wrapper cart-flex-item">
+                        <div class="total-wrapper">
+                            <span class="message">Total</span>
+                            <span class="total grant-total-value"></span>
+                        </div>
+                        <div class="checkout-message">
+                            <span>Use the Secure Checkout button below. You will be redirected to a secure payment page to complete this purchase</span>
+                        </div>
+                        <button class="checkout-button" onclick="goToStripeCheckout()">Secure Checkout</button>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <!-- Footer -->
+            <div id="footer">
+
+    <div class="content-wrapper">
+
+        <span class="logo logo-font logo-font-white">Izzy Sempill</span>
+        <div class="nav nav-layout">
+            <ul>
+                <li><a href="/">About</a></li>
+                <li><a href="/updates">Updates</a></li>
+                <li><a href="/printshop">Print Shop</a></li>
+                <li><a>Contact</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+</div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        (function() {
+            
+            let grandTotalValue = 0;
+            let currentCart = getCurrentCart();
+
+            for(let i = 0; i<currentCart.items.length; i++) {
+
+                //get the item stored in the cart
+                let cartItem = currentCart.items[i];
+
+                //get the "local product" values
+                let localProductItem = ALL_PRODUCTS[cartItem.price]; //"price" is the stripe ID
+                let localProductName = localProductItem.name;
+                let localProductPrice = localProductItem.price;
+                let localProductTotal = (localProductPrice * cartItem.quantity);
+                let localProductImageSrc = localProductItem.imageSrc
+
+                //update the grand total value
+                grandTotalValue += localProductTotal
+
+                // create a product card from the template
+                let template = document.getElementById("product-template");
+                let clone = template.content.cloneNode(true);
+
+                //set the relevant values
+                clone.querySelector('.template-value-title').innerText = localProductName;
+                clone.querySelector('.template-value-price').innerText = '£' + localProductPrice;
+                clone.querySelector('.template-value-quantity').innerText = cartItem.quantity;
+                clone.querySelector('.template-value-total').innerText = '£' + localProductTotal;
+                clone.querySelector('.template-value-img-src').src = localProductImageSrc;
+                
+                //add the product to the page
+                document.getElementById('products-wrapper').appendChild(clone);
+            }
+
+            //update the Grand Total
+            document.querySelector('.grant-total-value').innerText = '£' + grandTotalValue;
+           
+        })();
+
+    </script>
+
+</body>
+
+</html>

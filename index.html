@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wght@100..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Give+You+Glory&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.png">
+    <script src="assets/js/main.js"></script>
+    <title>Izzy Sempill</title>
+
+    <style>
+
+        #main-content .main-content-body {
+            margin-bottom: 75px;
+        }
+
+        #main-content .main-content-header .bg-image {
+            background-image: url(assets/images/headers/cover-about.jpg);
+            background-position-y: top;
+        }
+
+        @media screen and (max-width: 768px) {
+            #main-content .main-content-header .bg-image {
+                background-position-y: 55px;
+                background-repeat: no-repeat;
+            }
+        }
+
+        #main-content .main-content-subheading {
+            color: white;
+            font-weight: normal;
+        }
+
+        #main-content .main-content-subheading .logo-font {
+            color: white;
+            font-weight: bold;
+            font-size: 20pt;
+        }
+
+        .welcome-content {
+            text-align: center;
+        }
+
+        a.button-link {
+            width: 300px;
+            height: 50px;
+            margin: 20px 0;
+            background: var(--theme-green);
+            border-radius: 8px;
+            color: white;
+            font-size: 14pt;
+            font-weight: 500;
+            letter-spacing: 1px;
+            opacity: 0.9;
+            border: none;
+            padding: 0;
+            font: inherit;
+            cursor: pointer;
+            outline: inherit;
+            transition: opacity 0.2s;
+            line-height: 50px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        a.button-link:hover {
+            opacity: 1;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <!-- Side Bar -->
+    <div id="sidebar-shield">
+
+    <!-- Side Bar -->
+    <div id="sidebar">
+
+        <div class="sidebar-header">
+            <span class="close-icon" onclick="closeSidebar()">
+                <img src="assets/icons/close.svg" height="24">
+            </span>
+            <span class="logo logo-font">
+                Izzy Sempill
+            </span>
+        </div>
+
+        <div class="sidebar-content">
+
+            <div class="sidebar-items">
+
+                <div class="nav-layout">
+                    <ul>
+                        <li><a href="/">About</a></li>
+                        <li><a href="/updates">Updates</a></li>
+                        <li><a href="/printshop">Print Shop</a></li>
+                        <li><a href="/cart">My Cart</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <!-- Page Content -->
+    <div id="page-container">
+
+        <!-- Top Bar -->
+        <div id="topbar">
+
+    <!-- Standard Content -->
+    <div class="content-wrapper non-mobile">
+
+        <span class="logo logo-font" onclick="window.location=window.location.origin">
+            Izzy Sempill
+        </span>
+    
+        <div class="nav-layout">
+            <ul>
+                <li><a href="/">About</a></li>
+                <li><a href="/updates">Updates</a></li>
+                <li><a href="/printshop">Print Shop</a></li>
+                <li><a href="/cart"> <img src="/assets/icons/cart.svg"></a></li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <!-- Standard Content -->
+    <div class="content-wrapper mobile-only">
+        <div class="mobile-options">
+            <span class="burger-menu" onclick="openSidebar()">
+                <img src="assets/icons/burger-menu.svg" height="24">
+            </span>
+            <span class="logo logo-font" onclick="window.location=window.location.origin">
+                Izzy Sempill
+            </span>    
+        </div>
+    </div>
+
+
+</div>
+
+        <!-- Main Content -->
+        <div id="main-content" class="home-page">
+            
+            <div class="main-content-header parallax-scroll-off">
+                <div class="bg-image"></div>
+                <div class="main-content-title">
+                    <span>About</span>
+                    <!--<span class="subtitle">Multidisciplinary artist - Art teacher - Community practitioner</span>-->
+                </div>
+            </div>
+
+            <!-- Page Subheading -->
+            <div class="main-content-subheading">
+                <p class="text-block-subheading logo-font">Hi, I'm Izzy</p>
+                <p class="text-block-subheading">I'm a multidisciplinary artist, art teacher and community practitioner, based in West Yorkshire.</p>
+            </div>
+
+            <div class="main-content-body">
+
+                <!-- Welcome Message 
+                <div class="content-element text-block welcome-content">
+                    <p class="text-block-subheading logo-font">Hi, I'm Izzy</p>
+                    <p class="text-block-subheading">I'm a multidisciplinary artist, art teacher and community practitioner, based in West Yorkshire.</p>
+                </div> -->
+
+                <div class="content-element text-block">
+                    <p class="text-block-subheading">Artist</p>
+                    <p class="text-block-content">My work spans a range of mediums because I find so much joy in experimention. I start by exploring the properties and possibilities of different materials - often with minimal planning involved - then gradually refine my process until I reach a result I'm happy with.</p>
+                    <p class="text-block-content">On this site, you'll find prints of my collages, life drawings and mixed media pieces. I'll also provide regular updates about my practice. I have various works in progress, so there's more to come!</p>
+                </div>
+               
+                <div class="divider"></div>
+
+                <!-- Image Scroller (Mobile) -->
+                <div class="image-hscroller mobile-only">
+                    <div class="scroll-wrapper">
+                        <div class="hscroller-item"><img src="assets/images/examples/example-work-1.png"></div>
+                        <div class="hscroller-item"><img src="assets/images/examples/example-work-2.png"></div>
+                        <div class="hscroller-item"><img src="assets/images/examples/example-work-3.png"></div>
+                    </div>
+                </div>
+
+                <!-- Image Grid (Non-Mobile) -->
+                <div class="image-grid-layout non-mobile">
+                    <div class="grid-item"><img src="assets/images/examples/example-work-1.png"></div>
+                    <div class="grid-item"><img src="assets/images/examples/example-work-2.png"></div>
+                    <div class="grid-item"><img src="assets/images/examples/example-work-3.png"></div>
+                </div>
+
+                <div class="divider"></div>
+
+                <!-- More Text -->
+                <div class="content-element text-block">
+                    <p class="text-block-subheading">Art teacher</p>
+                    <p class="text-block-content">I have loads of experience with schools and young people. I worked in various pastoral roles with secondary and post-16 students before training to become an art teacher, and currently teach at a college. I'm an advocate for arts education and providing access to creative and cultural opportunities.</p>
+                </div>
+
+                <div class="divider"></div>
+
+                <!-- Image Scroller (Mobile) -->
+                <div class="image-hscroller mobile-only">
+                    <div class="scroll-wrapper">
+                        <div class="hscroller-item"><img src="assets/images/examples/example-work-14.png"></div>
+                        <div class="hscroller-item"><img src="assets/images/examples/example-work-13.png"></div>
+                        <div class="hscroller-item"><img src="assets/images/examples/example-work-5.png"></div>
+                    </div>
+                </div>
+
+                <!-- Image Grid (Non-Mobile) -->
+                <div class="image-grid-layout non-mobile">
+                    <div class="grid-item"><img src="assets/images/examples/example-work-14.png"></div>
+                    <div class="grid-item"><img src="assets/images/examples/example-work-13.png"></div>
+                    <div class="grid-item"><img src="assets/images/examples/example-work-5.png"></div>
+                </div>
+
+                <div class="divider"></div>
+
+                <!-- More Text -->
+                <div class="content-element text-block">
+                    <p class="text-block-subheading">Community practitioner</p>
+                    <p class="text-block-content">I'm actively broadening my practice to engage with local communities - something I've always wanted to do. My focus is facilitating and co-curating art projects that represent participants’ experiences and promote positive social change.</p>
+                    <p class="text-block-content">If you are interested in collaborating on community or family projects, please get in touch!</p>
+                </div>
+
+                <div class="divider"></div>
+
+                <!-- Image Scroller (Mobile) -->
+                <div class="image-hscroller mobile-only">
+                    <div class="scroll-wrapper">
+                        <div class="hscroller-item"><img src="assets/images/examples/example-work-6.png"></div>
+                        <div class="hscroller-item"><img src="assets/images/examples/example-work-15.png"></div>
+                        <div class="hscroller-item"><img src="assets/images/examples/example-work-12.png"></div>
+                    </div>
+                </div>
+
+                <!-- Image Grid (Non-Mobile) -->
+                <div class="image-grid-layout non-mobile">
+                    <div class="grid-item"><img src="assets/images/examples/example-work-6.png"></div>
+                    <div class="grid-item"><img src="assets/images/examples/example-work-15.png"></div>
+                    <div class="grid-item"><img src="assets/images/examples/example-work-12.png"></div>
+                </div>
+
+                <div class="divider"></div>
+
+                <!-- Qualifications -->
+                <div class="content-element text-block">
+                    <p class="text-block-subheading">Qualifications</p>
+                    <p class="text-block-content">BA History of Art & Design - University of Brighton</p>
+                    <p class="text-block-content">PGCE Secondary Art & Design (QTS + ECT) - Manchester Metropolitan University</p>
+                    <p class="text-block-content">Currently studying MA Socially Engaged Arts Practice - University of Salford</p>
+                </div>
+
+                <div class="divider"></div>
+
+                <!-- Image Scroller (Mobile) -->
+                <div class="image-hscroller mobile-only">
+                    <div class="scroll-wrapper">
+                        <div class="hscroller-item"><img src="assets/images/examples/example-work-4.png"></div>
+                        <div class="hscroller-item"><img src="assets/images/examples/example-work-10.png"></div>
+                        <div class="hscroller-item"><img src="assets/images/examples/example-work-9.png"></div>
+                    </div>
+                </div>
+
+                <!-- Image Grid (Non-Mobile) -->
+                <div class="image-grid-layout non-mobile">
+                    <div class="grid-item"><img src="assets/images/examples/example-work-4.png"></div>
+                    <div class="grid-item"><img src="assets/images/examples/example-work-10.png"></div>
+                    <div class="grid-item"><img src="assets/images/examples/example-work-9.png"></div>
+                </div>
+
+            </div>
+
+            <!-- Footer -->
+            <div id="footer">
+
+    <div class="content-wrapper">
+
+        <span class="logo logo-font logo-font-white">Izzy Sempill</span>
+        <div class="nav nav-layout">
+            <ul>
+                <li><a href="/">About</a></li>
+                <li><a href="/updates">Updates</a></li>
+                <li><a href="/printshop">Print Shop</a></li>
+                <li><a>Contact</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

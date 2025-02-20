@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wght@100..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Give+You+Glory&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <script src="assets/js/main.js"></script>
+    <title>Izzy Sempill</title>
+
+    <style>
+
+        #main-content .main-content-header .bg-image {
+            background-image: url('assets/images/headers/cover-print-shop.jpg');
+        }
+
+        #main-content .main-content-header .bg-image {
+            background-image: url('assets/images/headers/cover-print-shop.jpg');
+        }
+
+        #main-content  .main-content-subheading table {
+            margin: 0 auto;
+        }
+
+        #main-content  .main-content-subheading table td {
+            padding: 0 6px;
+            vertical-align: middle;
+        }
+
+        #main-content  .main-content-subheading table .printshop-filter {
+            display: inline-block;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        #main-content  .main-content-subheading table .printshop-filter.active {
+            text-decoration: underline;
+            text-underline-offset: 5px;
+        }
+
+        #main-content  .main-content-subheading table .separator {
+            display: inline-block;
+            height: 6px;
+            width: 6px;
+            border-radius: 50%;
+            background-color: white;
+        }
+
+        .image-grid-layout .grid-item.landscape-double-size {
+            max-width: calc((100% / 1.5) - 5px);
+        }
+
+        .image-grid-layout .grid-item.landscape-double-size .product-card-images-wrapper {
+            aspect-ratio: auto;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <!-- Side Bar -->
+    <div id="sidebar-shield">
+
+    <!-- Side Bar -->
+    <div id="sidebar">
+
+        <div class="sidebar-header">
+            <span class="close-icon" onclick="closeSidebar()">
+                <img src="assets/icons/close.svg" height="24">
+            </span>
+            <span class="logo logo-font">
+                Izzy Sempill
+            </span>
+        </div>
+
+        <div class="sidebar-content">
+
+            <div class="sidebar-items">
+
+                <div class="nav-layout">
+                    <ul>
+                        <li><a href="/">About</a></li>
+                        <li><a href="/updates">Updates</a></li>
+                        <li><a href="/printshop">Print Shop</a></li>
+                        <li><a href="/cart">My Cart</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <!-- Page Content -->
+    <div id="page-container">
+
+        <!-- Top Bar -->
+        <div id="topbar">
+
+    <!-- Standard Content -->
+    <div class="content-wrapper non-mobile">
+
+        <span class="logo logo-font" onclick="window.location=window.location.origin">
+            Izzy Sempill
+        </span>
+    
+        <div class="nav-layout">
+            <ul>
+                <li><a href="/">About</a></li>
+                <li><a href="/updates">Updates</a></li>
+                <li><a href="/printshop">Print Shop</a></li>
+                <li><a href="/cart"> <img src="/assets/icons/cart.svg"></a></li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <!-- Standard Content -->
+    <div class="content-wrapper mobile-only">
+        <div class="mobile-options">
+            <span class="burger-menu" onclick="openSidebar()">
+                <img src="assets/icons/burger-menu.svg" height="24">
+            </span>
+            <span class="logo logo-font" onclick="window.location=window.location.origin">
+                Izzy Sempill
+            </span>    
+        </div>
+    </div>
+
+
+</div>
+
+        <!-- Main Content -->
+        <div id="main-content" class="home-page">
+            
+            <!-- Page Subheading -->
+            <div class="main-content-header parallax-scroll-off">
+                <div class="bg-image"></div>
+                <div class="main-content-title">
+                    <span>Print Shop</span>
+                    <!--<span class="subtitle">A bit of text here would look nice i think, because it adds a bit of verticality</span>-->
+                </div>
+            </div>
+
+            <!-- Page Subheading -->
+            <div class="main-content-subheading">
+                <table>
+                    <td class="printshop-filter active" onclick="filterImages('all', this)">All Prints</td>
+                    <!--<td><div class="separator"></div></td>-->
+                    <td class="printshop-filter"        onclick="filterImages('collages', this)">Collages</td>
+                    <!--<td><div class="separator"></div></td>-->
+                    <td class="printshop-filter"        onclick="filterImages('mixedmedia', this)">Mixed Media</td>
+                    <!--<td><div class="separator"></div></td>-->
+                    <td class="printshop-filter"        onclick="filterImages('lifedrawings', this)">Life Drawings</td>
+                </table>
+            </div>
+
+            <!-- Main Content -->
+            <div class="main-content-body">
+
+                <!-- Items -->
+                <div class="image-grid-layout"> 
+                    <!-- Each Item as a grid -->
+                    
+<a href="product/circles" class="product grid-item" data-print-group="collages">
+    <div class="product-item">
+
+        <div class="product-card">
+
+            <!-- Images -->
+            <div class="product-card-images-wrapper">
+                
+                    <img src="/assets/images/collages/circles.jpg" class="image main">
+                
+                    <img src="/assets/images/collages/circles_frame.jpg" class="image">
+                
+            </div>
+        
+            <!-- Details and Price -->
+            <div class="product-details-wrapper">
+                <div class="collection"><span>Collages</span></div>
+                <span class="price">£12</span>
+                <span class="title">Circles</span>
+            </div>
+            
+        </div>
+
+    </div>
+</a>
+
+<a href="product/floorboards" class="product grid-item" data-print-group="collages">
+    <div class="product-item">
+
+        <div class="product-card">
+
+            <!-- Images -->
+            <div class="product-card-images-wrapper">
+                
+                    <img src="/assets/images/collages/floorboards.jpg" class="image main">
+                
+                    <img src="/assets/images/collages/floorboards_frame.jpg" class="image">
+                
+            </div>
+        
+            <!-- Details and Price -->
+            <div class="product-details-wrapper">
+                <div class="collection"><span>Collages</span></div>
+                <span class="price">£12</span>
+                <span class="title">Floorboards</span>
+            </div>
+            
+        </div>
+
+    </div>
+</a>
+
+<a href="product/blue-fabrics" class="product grid-item" data-print-group="collages">
+    <div class="product-item">
+
+        <div class="product-card">
+
+            <!-- Images -->
+            <div class="product-card-images-wrapper">
+                
+                    <img src="/assets/images/collages/blue_fabrics.jpg" class="image main">
+                
+                    <img src="/assets/images/collages/blue_fabrics_frame.jpg" class="image">
+                
+                    <img src="/assets/images/collages/collage_1.jpg" class="image">
+                
+            </div>
+        
+            <!-- Details and Price -->
+            <div class="product-details-wrapper">
+                <div class="collection"><span>Collages</span></div>
+                <span class="price">£12</span>
+                <span class="title">Blue fabrics</span>
+            </div>
+            
+        </div>
+
+    </div>
+</a>
+
+<a href="product/lemons" class="product grid-item" data-print-group="collages">
+    <div class="product-item">
+
+        <div class="product-card">
+
+            <!-- Images -->
+            <div class="product-card-images-wrapper">
+                
+                    <img src="/assets/images/collages/lemons.jpg" class="image main">
+                
+                    <img src="/assets/images/collages/lemons_frame.jpg" class="image">
+                
+                    <img src="/assets/images/collages/collage_1.jpg" class="image">
+                
+            </div>
+        
+            <!-- Details and Price -->
+            <div class="product-details-wrapper">
+                <div class="collection"><span>Collages</span></div>
+                <span class="price">£12</span>
+                <span class="title">Lemons</span>
+            </div>
+            
+        </div>
+
+    </div>
+</a>
+
+<a href="product/pink-and-brown" class="product grid-item" data-print-group="collages">
+    <div class="product-item">
+
+        <div class="product-card">
+
+            <!-- Images -->
+            <div class="product-card-images-wrapper">
+                
+                    <img src="/assets/images/collages/pink_and_brown.jpg" class="image main">
+                
+                    <img src="/assets/images/collages/pink_and_brown_frame.jpg" class="image">
+                
+                    <img src="/assets/images/collages/collage_1.jpg" class="image">
+                
+            </div>
+        
+            <!-- Details and Price -->
+            <div class="product-details-wrapper">
+                <div class="collection"><span>Collages</span></div>
+                <span class="price">£12</span>
+                <span class="title">Pink and brown</span>
+            </div>
+            
+        </div>
+
+    </div>
+</a>
+
+<a href="product/three-pieces" class="product grid-item" data-print-group="collages">
+    <div class="product-item">
+
+        <div class="product-card">
+
+            <!-- Images -->
+            <div class="product-card-images-wrapper">
+                
+                    <img src="/assets/images/collages/three_pieces.jpg" class="image main">
+                
+                    <img src="/assets/images/collages/three_pieces_frame.jpg" class="image">
+                
+                    <img src="/assets/images/collages/collage_1.jpg" class="image">
+                
+            </div>
+        
+            <!-- Details and Price -->
+            <div class="product-details-wrapper">
+                <div class="collection"><span>Collages</span></div>
+                <span class="price">£12</span>
+                <span class="title">Three pieces</span>
+            </div>
+            
+        </div>
+
+    </div>
+</a>
+
+<a href="product/gate-collage-1" class="product grid-item" data-print-group="collages">
+    <div class="product-item">
+
+        <div class="product-card">
+
+            <!-- Images -->
+            <div class="product-card-images-wrapper">
+                
+                    <img src="/assets/images/collages/gate_collage_1.jpg" class="image main">
+                
+                    <img src="/assets/images/collages/gate_collage_1_frame.jpg" class="image">
+                
+            </div>
+        
+            <!-- Details and Price -->
+            <div class="product-details-wrapper">
+                <div class="collection"><span>Collages</span></div>
+                <span class="price">£12</span>
+                <span class="title">Gate collage 1</span>
+            </div>
+            
+        </div>
+
+    </div>
+</a>
+
+<a href="product/gate-collage-2" class="product grid-item" data-print-group="collages">
+    <div class="product-item">
+
+        <div class="product-card">
+
+            <!-- Images -->
+            <div class="product-card-images-wrapper">
+                
+                    <img src="/assets/images/collages/gate_collage_2.jpg" class="image main">
+                
+                    <img src="/assets/images/collages/gate_collage_2_frame.jpg" class="image">
+                
+            </div>
+        
+            <!-- Details and Price -->
+            <div class="product-details-wrapper">
+                <div class="collection"><span>Collages</span></div>
+                <span class="price">£12</span>
+                <span class="title">Gate collage 2</span>
+            </div>
+            
+        </div>
+
+    </div>
+</a>
+
+<a href="product/gate-collage-3" class="product grid-item" data-print-group="collages">
+    <div class="product-item">
+
+        <div class="product-card">
+
+            <!-- Images -->
+            <div class="product-card-images-wrapper">
+                
+                    <img src="/assets/images/collages/gate_collage_3.jpg" class="image main">
+                
+                    <img src="/assets/images/collages/gate_collage_3_frame.jpg" class="image">
+                
+            </div>
+        
+            <!-- Details and Price -->
+            <div class="product-details-wrapper">
+                <div class="collection"><span>Collages</span></div>
+                <span class="price">£12</span>
+                <span class="title">Gate collage 3</span>
+            </div>
+            
+        </div>
+
+    </div>
+</a>
+
+<a href="product/blue-and-green" class="product grid-item" data-print-group="mixedmedia">
+    <div class="product-item">
+
+        <div class="product-card">
+
+            <!-- Images -->
+            <div class="product-card-images-wrapper">
+                
+                    <img src="/assets/images/mixedmedia/blue_and_green.jpg" class="image main">
+                
+                    <img src="/assets/images/mixedmedia/blue_and_green_frame.jpg" class="image">
+                
+                    <img src="/assets/images/mixedmedia/blue_and_green_close.jpg" class="image">
+                
+            </div>
+        
+            <!-- Details and Price -->
+            <div class="product-details-wrapper">
+                <div class="collection"><span>Mixed Media</span></div>
+                <span class="price">£12</span>
+                <span class="title">Blue and green</span>
+            </div>
+            
+        </div>
+
+    </div>
+</a>
+
+<a href="product/pink-and-yellow" class="product grid-item" data-print-group="mixedmedia">
+    <div class="product-item">
+
+        <div class="product-card">
+
+            <!-- Images -->
+            <div class="product-card-images-wrapper">
+                
+                    <img src="/assets/images/mixedmedia/pink_and_yellow.jpg" class="image main">
+                
+                    <img src="/assets/images/mixedmedia/pink_and_yellow_frame.jpg" class="image">
+                
+                    <img src="/assets/images/mixedmedia/pink_and_yellow_close.jpg" class="image">
+                
+            </div>
+        
+            <!-- Details and Price -->
+            <div class="product-details-wrapper">
+                <div class="collection"><span>Mixed Media</span></div>
+                <span class="price">£12</span>
+                <span class="title">Pink and yellow</span>
+            </div>
+            
+        </div>
+
+    </div>
+</a>
+
+<a href="product/green-and-orange" class="product grid-item" data-print-group="mixedmedia">
+    <div class="product-item">
+
+        <div class="product-card">
+
+            <!-- Images -->
+            <div class="product-card-images-wrapper">
+                
+                    <img src="/assets/images/mixedmedia/green_and_orange.jpg" class="image main">
+                
+                    <img src="/assets/images/mixedmedia/green_and_orange_frame.jpg" class="image">
+                
+                    <img src="/assets/images/mixedmedia/green_and_orange_close.jpg" class="image">
+                
+            </div>
+        
+            <!-- Details and Price -->
+            <div class="product-details-wrapper">
+                <div class="collection"><span>Mixed Media</span></div>
+                <span class="price">£12</span>
+                <span class="title">Green and orange</span>
+            </div>
+            
+        </div>
+
+    </div>
+</a>
+
+<a href="product/continuous-line-1" class="product grid-item initial-image" data-print-group="lifedrawings">
+    <div class="product-item">
+
+        <div class="product-card">
+
+            <!-- Images -->
+            <div class="product-card-images-wrapper">
+                
+                    <img src="/assets/images/lifedrawings/continuous_line_1.jpg" class="image main">
+                
+                    <img src="/assets/images/lifedrawings/continuous_line_1_frame.jpg" class="image">
+                
+            </div>
+        
+            <!-- Details and Price -->
+            <div class="product-details-wrapper">
+                <div class="collection"><span>Life Drawings</span></div>
+                <span class="price">£12</span>
+                <span class="title">Continuous line 1</span>
+            </div>
+            
+        </div>
+
+    </div>
+</a>
+
+<a href="product/continuous-line-2" class="product grid-item" data-print-group="lifedrawings">
+    <div class="product-item">
+
+        <div class="product-card">
+
+            <!-- Images -->
+            <div class="product-card-images-wrapper">
+                
+                    <img src="/assets/images/lifedrawings/continuous_line_2.jpg" class="image main">
+                
+                    <img src="/assets/images/lifedrawings/continuous_line_2_frame.jpg" class="image">
+                
+            </div>
+        
+            <!-- Details and Price -->
+            <div class="product-details-wrapper">
+                <div class="collection"><span>Life Drawings</span></div>
+                <span class="price">£12</span>
+                <span class="title">Continuous line 2</span>
+            </div>
+            
+        </div>
+
+    </div>
+</a>
+
+<a href="product/two-poses" class="product grid-item" data-print-group="lifedrawings">
+    <div class="product-item">
+
+        <div class="product-card">
+
+            <!-- Images -->
+            <div class="product-card-images-wrapper">
+                
+                    <img src="/assets/images/lifedrawings/two_poses.jpg" class="image main">
+                
+                    <img src="/assets/images/lifedrawings/two_poses_frame.jpg" class="image">
+                
+            </div>
+        
+            <!-- Details and Price -->
+            <div class="product-details-wrapper">
+                <div class="collection"><span>Life Drawings</span></div>
+                <span class="price">£12</span>
+                <span class="title">Two poses</span>
+            </div>
+            
+        </div>
+
+    </div>
+</a>
+
+<a href="product/woman-portrait" class="product grid-item" data-print-group="lifedrawings">
+    <div class="product-item">
+
+        <div class="product-card">
+
+            <!-- Images -->
+            <div class="product-card-images-wrapper">
+                
+                    <img src="/assets/images/lifedrawings/woman_portrait.jpg" class="image main">
+                
+                    <img src="/assets/images/lifedrawings/woman_portrait_frame.jpg" class="image">
+                
+            </div>
+        
+            <!-- Details and Price -->
+            <div class="product-details-wrapper">
+                <div class="collection"><span>Life Drawings</span></div>
+                <span class="price">£12</span>
+                <span class="title">Woman portrait</span>
+            </div>
+            
+        </div>
+
+    </div>
+</a>
+
+                </div>
+
+            </div>
+
+        </div>
+        
+        <!-- Footer -->
+        <div id="footer">
+
+    <div class="content-wrapper">
+
+        <span class="logo logo-font logo-font-white">Izzy Sempill</span>
+        <div class="nav nav-layout">
+            <ul>
+                <li><a href="/">About</a></li>
+                <li><a href="/updates">Updates</a></li>
+                <li><a href="/printshop">Print Shop</a></li>
+                <li><a>Contact</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+</div>
+
+    </div>
+
+    <script>
+
+        //load the product cards into a variable
+        const productItems = document.getElementsByClassName('product');
+        const printShopFilters = document.getElementsByClassName('printshop-filter');
+
+        // Make sure certain images height match a given "image height leader"
+        let imageHeightLeader = document.querySelector('.initial-image .product-card-images-wrapper')
+        if(imageHeightLeader) 
+            registerImageHeightFollowers(imageHeightLeader);
+
+            
+        /*
+         * **********************************************************************************************
+         *                                           Ensure Image Hight
+         * **********************************************************************************************
+         */
+        function registerImageHeightFollowers(imageHeightLeader) {
+
+            let lastHeight = -1; 
+            const containers = document.querySelectorAll('.landscape-double-size .product-card-images-wrapper, .landscape-double-size img');
+
+             //
+            new ResizeObserver((entries) => {
+                for(let entry of entries) {
+                    let imgHeight = entry.contentBoxSize[0].blockSize;
+                    if(imgHeight != lastHeight) {
+                        let newHeightPx = imgHeight+ 'px'
+                        for(let container of containers) {
+                            container.style.height = newHeightPx;
+                        }
+                        lastHeight = imgHeight;
+                    }
+                }
+            }).observe(imageHeightLeader)
+        }
+
+         /*
+          * **********************************************************************************************
+          *                                           Filter Images
+          * **********************************************************************************************
+          */
+        function filterImages(groupId, element) {
+
+            //check if the "All" option is selected (to display all product item)
+            let isAll = groupId === 'all'
+
+            //make the correct filter as active
+            for(let filter of printShopFilters) {
+                if(filter == element)  { filter.classList.add('active'); }
+                else                   { filter.classList.remove('active'); }
+            }
+
+            //only display the relevant product item
+            for(let item of productItems) {
+                let style = isAll || item.dataset.printGroup === groupId ? 'block' : 'none';
+                item.style.display = style;
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
