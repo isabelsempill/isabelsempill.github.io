@@ -14,6 +14,35 @@
 
     <style>
 
+        #page-container {
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+        }
+
+        #main-content .main-content-body[data-has-items="false"] .cart-wrapper {
+            display: none;
+        }
+
+        #main-content .main-content-body[data-has-items="true"] .empty-message {
+            display: none;
+        }
+
+        #main-content .main-content-body .empty-message {
+            text-align: center;
+            font-size: 20px;
+        }
+
+        #main-content .main-content-body .empty-message span {
+            display: block;
+        }
+
+        #main-content .main-content-body .empty-message span:last-child {
+            color: var(--theme-green);
+            cursor: pointer;
+            margin-top: 20px;
+            font-size: 24px;
+        }
+
         #main-content .main-content-body .cart-wrapper {
             display: flex;
             flex-wrap: wrap;
@@ -22,18 +51,18 @@
         }
 
         #main-content .main-content-body .cart-wrapper .cart-flex-item {
-            flex: 1 0 500px;
+            flex: 1 1 500px;
         }
 
         #main-content .main-content-body .cart-wrapper .product-wrapper {
             display: grid;
             gap: 10px;
             grid-template-columns: auto 1fr;
-            grid-template-rows: auto 1fr;
+            grid-template-rows: auto auto 1fr;
         }
 
         #main-content .main-content-body .cart-wrapper .product-wrapper .product-image {
-            grid-row: span 2;
+            grid-row: span 3;
             height: 225px;
             background: var(--theme-blue);
             padding: 5px;
@@ -62,12 +91,17 @@
         }
 
         #main-content .main-content-body .cart-wrapper .product-wrapper .product-totals .quantity-wrapper .amount {
-            margin-left: 5px;
+            margin: 0 5px;
         }
 
         #main-content .main-content-body .cart-wrapper .product-wrapper .product-totals .total {
             font-size: 20px;
             font-weight: bold;
+        }
+
+        #main-content .main-content-body .cart-wrapper .product-wrapper .product-actions .remove {
+            color: #e31919;
+            cursor: pointer;
         }
 
         #main-content .main-content-body .cart-wrapper .payment-wrapper {
@@ -94,7 +128,6 @@
             text-align: center;
         }
 
-
         /* Buy Option */
         .checkout-button {
             width: 100%;
@@ -113,6 +146,14 @@
             cursor: pointer;
             outline: none;
             border: none;
+        }
+
+        .checkout-button.loading span.default {
+            display: none;
+        }
+        
+        .checkout-button:not(.loading) span.loading {
+            display: none;
         }
 
         .checkout-button:active {
@@ -212,30 +253,48 @@
             <!-- Main Content -->
             <div class="main-content-body">
 
-                <div class="cart-wrapper">
+                <div id="cart-wrapper" class="cart-wrapper">
 
                     <div id="products-wrapper" class="products-wrapper cart-flex-item">
+
                         <!-- Product Template -->
                         <template id="product-template">
-                            <div class="product-wrapper">
-                                            
-                                <div class="product-image">
-                                    <img class="template-value-img-src">
-                                </div>
-                                <div class="product-title product-details">
-                                    <span class="title template-value-title"></span>
-                                    <span class="price template-value-price"></span>
-                                </div>
-                                <div class="product-totals product-details">
-                                    <div class="quantity-wrapper">
-                                        <span>Quantity:</span>
-                                        <span class="amount template-value-quantity"></span>
+                            <div class="template-value-product-id">
+
+                            
+                                <div class="product-wrapper">  
+                                    <!-- Image -->
+                                    <div class="product-image">
+                                        <img class="template-value-img-src">
                                     </div>
-                                    <span class="total template-value-total"></span>
+                                    <!-- Total and Price -->
+                                    <div class="product-title product-details">
+                                        <span class="title template-value-title"></span>
+                                        <span class="price template-value-price"></span>
+                                    </div>
+                                    <!-- Quantity and Total -->
+                                    <div class="product-totals product-details">
+                                        <div class="quantity-wrapper">
+                                            <span class="message">Quantity:</span>
+                                            <select class="amount template-value-quantity template-value-id" onchange="updateQuantity(this)" >
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                            </select>
+                                        </div>
+                                        <span class="total template-value-total"></span>
+                                    </div>
+                                    <!-- Remove Action -->
+                                    <div class="product-actions product-details">
+                                        <span class="remove template-value-id" onclick="removeItem(this)">Remove</span>
+                                    </div>
                                 </div>
+                                <div class="divider"></div>
                             </div>
-                            <div class="divider"></div>
                         </template>
+
                     </div>
 
                      <!-- Product Details -->
@@ -247,16 +306,27 @@
                         <div class="checkout-message">
                             <span>Use the Secure Checkout button below. You will be redirected to a secure payment page to complete this purchase</span>
                         </div>
-                        <button class="checkout-button" onclick="goToStripeCheckout()">Secure Checkout</button>
+                        <button class="checkout-button" onclick="secureCheckout(this)">
+                            <span class="default">Secure Checkout</span>
+                            <span class="loading"><img src="/assets/icons/loading.svg"></span>
+                        </button>
+
                     </div>
 
+                </div>
+
+                <div class="empty-message">
+                    <span>Your cart is currently empty</span>
+                    <span onclick="window.location='/printshop'">Visit Print Shop</span>
                 </div>
 
 
             </div>
 
-            <!-- Footer -->
-            <div id="footer">
+        </div>
+
+        <!-- Footer -->
+        <div id="footer">
 
     <div class="content-wrapper">
 
@@ -266,8 +336,9 @@
                 <li><a href="/">About</a></li>
                 <li><a href="/updates">Updates</a></li>
                 <li><a href="/printshop">Print Shop</a></li>
-                <li><a>Contact</a></li>
+                <li><a href="/contact">Contact</a></li>
             </ul>
+            <span style="display: block; margin-top: 20px;">&copy; Izzy Sempill</span>
         </div>
 
     </div>
@@ -280,8 +351,58 @@
 
     <script>
 
-        (function() {
-            
+
+        function secureCheckout(btnEl) {
+
+            //cant add if "loading"
+            if(btnEl.classList.contains('loading')) return;
+
+            btnEl.classList.add('loading');
+            goToStripeCheckout();
+
+        }
+
+        /*
+         *
+         */
+        function updateQuantity(btnEl) {
+
+            //update the item quantity in the cart
+            let cartItem = updateItemQuantity(btnEl.dataset.stripeId, btnEl.value)
+            let domEle = document.querySelector('[data-sid='+btnEl.dataset.stripeId+']')
+
+            //update the DOM with the new product values
+            setLocalProductValues(cartItem, domEle)
+
+            //Update Grand Totals
+            updateTotals();
+            updateDisplay();
+
+        }
+
+        /*
+         *
+         */
+        function removeItem(btnEl) {
+
+            // remove the item from the cart
+            removeProductFromCart(btnEl.dataset.stripeId)
+
+            //get the correct DOM element, and remove it
+            let domEle = document.querySelector('[data-sid='+btnEl.dataset.stripeId+']')
+            domEle.remove();
+
+            //Update Grand Totals
+            updateTotals();
+            updateDisplay();
+
+        }
+
+        /*
+         *
+         */
+        function updateTotals() {
+
             let grandTotalValue = 0;
             let currentCart = getCurrentCart();
 
@@ -289,34 +410,77 @@
 
                 //get the item stored in the cart
                 let cartItem = currentCart.items[i];
-
-                //get the "local product" values
                 let localProductItem = ALL_PRODUCTS[cartItem.price]; //"price" is the stripe ID
-                let localProductName = localProductItem.name;
-                let localProductPrice = localProductItem.price;
-                let localProductTotal = (localProductPrice * cartItem.quantity);
-                let localProductImageSrc = localProductItem.imageSrc
+                let localProductTotal = (localProductItem.price * cartItem.quantity);
 
                 //update the grand total value
                 grandTotalValue += localProductTotal
+
+            }
+
+            //update the Grand Total
+            document.querySelector('.grant-total-value').innerText = '£' + grandTotalValue;
+
+        }
+
+        /*
+         *
+         */
+        function setLocalProductValues(cartItem, productElem) {
+
+            //get the "local product" values
+            let localProductItem = ALL_PRODUCTS[cartItem.price]; //"price" is the stripe ID
+            let localProductName = localProductItem.name;
+            let localProductPrice = localProductItem.price;
+            let localProductTotal = (localProductPrice * cartItem.quantity);
+            let localProductImageSrc = localProductItem.imageSrc
+
+            //set the relevant values
+            //productElem.querySelector('.template-value-product-id').setAttribute('data-sid', cartItem.price);
+            productElem.querySelector('.template-value-title').innerText = localProductName;
+            productElem.querySelector('.template-value-price').innerText = '£' + localProductPrice;
+            productElem.querySelector('.template-value-quantity').value = cartItem.quantity;
+            productElem.querySelector('.template-value-total').innerText = '£' + localProductTotal;
+            productElem.querySelector('.template-value-img-src').src = localProductImageSrc;
+            productElem.querySelectorAll('.template-value-id').forEach(el => el.dataset.stripeId = cartItem.price)
+
+        }
+
+        /*
+         *
+         */
+        function updateDisplay() {
+            let currentCart = getCurrentCart();
+            let contentBody = document.querySelector('.main-content-body');
+            contentBody.setAttribute('data-has-items', currentCart.items.length > 0);
+        }
+
+
+        (function() {
+            
+            cleanCart();
+
+            let currentCart = getCurrentCart();
+
+            for(let i = 0; i<currentCart.items.length; i++) {
+
+                //get the item stored in the cart
+                let cartItem = currentCart.items[i];
 
                 // create a product card from the template
                 let template = document.getElementById("product-template");
                 let clone = template.content.cloneNode(true);
 
-                //set the relevant values
-                clone.querySelector('.template-value-title').innerText = localProductName;
-                clone.querySelector('.template-value-price').innerText = '£' + localProductPrice;
-                clone.querySelector('.template-value-quantity').innerText = cartItem.quantity;
-                clone.querySelector('.template-value-total').innerText = '£' + localProductTotal;
-                clone.querySelector('.template-value-img-src').src = localProductImageSrc;
-                
+                //set all the values on the cloned object
+                setLocalProductValues(cartItem, clone)
+                clone.querySelector('.template-value-product-id').setAttribute('data-sid', cartItem.price);
+
                 //add the product to the page
                 document.getElementById('products-wrapper').appendChild(clone);
             }
 
-            //update the Grand Total
-            document.querySelector('.grant-total-value').innerText = '£' + grandTotalValue;
+            updateTotals();
+            updateDisplay();
            
         })();
 

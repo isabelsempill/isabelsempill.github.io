@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wght@100..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Give+You+Glory&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <script src="/assets/js/main.js"></script>
+    <title>Izzy Sempill</title>
+
+    <style>
+
+        #page-container {
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+        }
+
+        #main-content .main-content-body .message {
+            text-align: center;
+            font-size: 20px;
+        }
+
+        #main-content .main-content-body .message span {
+            display: block;
+        }
+
+        #main-content .main-content-body .message span:last-child {
+            color: var(--theme-green);
+            cursor: pointer;
+            margin-top: 20px;
+            font-size: 24px;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <!-- Side Bar -->
+    <div id="sidebar-shield">
+
+    <!-- Side Bar -->
+    <div id="sidebar">
+
+        <div class="sidebar-header">
+            <span class="close-icon" onclick="closeSidebar()">
+                <img src="assets/icons/close.svg" height="24">
+            </span>
+            <span class="logo logo-font">
+                Izzy Sempill
+            </span>
+        </div>
+
+        <div class="sidebar-content">
+
+            <div class="sidebar-items">
+
+                <div class="nav-layout">
+                    <ul>
+                        <li><a href="/">About</a></li>
+                        <li><a href="/updates">Updates</a></li>
+                        <li><a href="/printshop">Print Shop</a></li>
+                        <li><a href="/cart">My Cart</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <!-- Page Content -->
+    <div id="page-container">
+
+        <!-- Top Bar -->
+        <div id="topbar">
+
+    <!-- Standard Content -->
+    <div class="content-wrapper non-mobile">
+
+        <span class="logo logo-font" onclick="window.location=window.location.origin">
+            Izzy Sempill
+        </span>
+    
+        <div class="nav-layout">
+            <ul>
+                <li><a href="/">About</a></li>
+                <li><a href="/updates">Updates</a></li>
+                <li><a href="/printshop">Print Shop</a></li>
+                <li><a href="/cart"> <img src="/assets/icons/cart.svg"></a></li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <!-- Standard Content -->
+    <div class="content-wrapper mobile-only">
+        <div class="mobile-options">
+            <span class="burger-menu" onclick="openSidebar()">
+                <img src="assets/icons/burger-menu.svg" height="24">
+            </span>
+            <span class="logo logo-font" onclick="window.location=window.location.origin">
+                Izzy Sempill
+            </span>    
+        </div>
+    </div>
+
+
+</div>
+
+        <!-- Main Content -->
+        <div id="main-content" class="home-page">
+            
+            <!-- Page Subheading -->
+            <div class="main-content-subheading">
+                <span class="text-block-subheading">Success</span>
+            </div>
+
+            <!-- Main Content -->
+            <div class="main-content-body">
+
+                <div class="message">
+                    <span>Thank you for your purchase</span>
+                    <span onclick="window.location='/'">Home</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <div id="footer">
+
+    <div class="content-wrapper">
+
+        <span class="logo logo-font logo-font-white">Izzy Sempill</span>
+        <div class="nav nav-layout">
+            <ul>
+                <li><a href="/">About</a></li>
+                <li><a href="/updates">Updates</a></li>
+                <li><a href="/printshop">Print Shop</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+            <span style="display: block; margin-top: 20px;">&copy; Izzy Sempill</span>
+        </div>
+
+    </div>
+
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

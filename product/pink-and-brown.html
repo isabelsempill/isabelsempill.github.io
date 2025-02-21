@@ -139,6 +139,11 @@
             padding: 6px 0;
         }
 
+        .product-layout .product-details-section .product-details-description .product-details-description-detail .bold {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
         /*
          * Slideshow
          */
@@ -153,6 +158,27 @@
         .image-grid-layout .slideshow-image-wrapper img {
             max-width: 100%;
             max-height: 700px;
+        }
+
+        /*Toast*/
+        #toast {
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #56655c;
+            padding: 10px 18px;
+            border-radius: 10px;
+            color: white;
+            font-size: 18px;
+            opacity: 0;
+
+            transition: bottom 0.2s, opacity 0.2s;
+        }
+
+        #toast.active {
+            bottom: 50px;
+            opacity: 1;
         }
 
 
@@ -327,13 +353,13 @@
                                 <span class="product-details-subheading">Collages</span>
                                 <span class="product-details-headings">Pink and brown</span>
                             </div>
-                            <span class="product-details-price">£12</span>
+                            <span class="product-details-price">£15</span>
                         </div>
                         
                         <div class="product-details-buy-option">
                             <button class="add" onclick="addToCart(this)">
                                 <span class="add">Add to cart</span>
-                                <span class="adding">Added to cart</span>
+                                <span class="adding"><img src="/assets/icons/loading.svg"></span>
                             </button>
                             <button class="view" onclick="window.location='/cart'">View cart</button>
                         </div>
@@ -344,15 +370,18 @@
                             
                                 <span class="product-details-description-detail">A4 print</span>
                             
-                                <span class="product-details-description-detail">£12</span>
+                                <span class="product-details-description-detail">£15</span>
                             
                                 <span class="product-details-description-detail">230gsm Pinnacle matte paper</span>
-                            
-                                <span class="product-details-description-detail">Shipping will be calculated during checkout</span>
                             
                                 <span class="product-details-description-detail">Print of collage, originally created using cut-outs from luxury fashion magazines and found publications.</span>
                             
 
+                            <div class="product-details-description-detail">
+                                <span class="bold">Free UK delivery. Please note:</span>
+                                <span >items are printed to order, so may not be shipped right away. If items are not immediately available, I will contact you to provide an estimated shipping date. Please also feel free to contact me before ordering. Customers should allow up to 3 weeks for orders to be dispatched. Unfortunately I cannot offer delivery outside of the UK. Thank you for understanding.</span>
+                            </div>
+                            
                         </div>
 
                     </div>
@@ -372,8 +401,9 @@
                 <li><a href="/">About</a></li>
                 <li><a href="/updates">Updates</a></li>
                 <li><a href="/printshop">Print Shop</a></li>
-                <li><a>Contact</a></li>
+                <li><a href="/contact">Contact</a></li>
             </ul>
+            <span style="display: block; margin-top: 20px;">&copy; Izzy Sempill</span>
         </div>
 
     </div>
@@ -384,7 +414,12 @@
 
     </div>
 
+    <div id="toast">
+        <span>Item Added To Cart</span>
+    </div>
+
     <script>
+
 
         function addToCart(btnEl) {
 
@@ -392,16 +427,27 @@
             if(btnEl.classList.contains('is-adding')) return;
 
             //add the product to the cart
-            let stripeId = '@@stripeId';
+            let stripeId = 'price_1QuzLEEnmUYXdCQkMYXJMjQ2';
             btnEl.classList.add('is-adding');
             addProductToCart(stripeId, 1)
 
             //wait for 3 seconds before allowing the cart to be added to again
             setTimeout(() => {
+                displayToast();
                 btnEl.classList.remove('is-adding');
-            }, 3000)
+            }, 750)
 
         }
+
+        function displayToast() {
+            let toast = document.getElementById('toast')
+            toast.classList.add('active')
+            setTimeout(() => {
+                toast.classList.remove('active')
+            }, 2000)
+
+        }
+
 
     </script>
 
