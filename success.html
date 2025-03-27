@@ -24,8 +24,20 @@
             font-size: 20px;
         }
 
+		#main-content .main-content-body .message span:first-child {
+			margin-bottom: 20px;
+		}
+
         #main-content .main-content-body .message span {
             display: block;
+        }
+
+		#main-content .main-content-body .message span.sub {
+			font-size: 16px;
+        }
+
+		#main-content .main-content-body .message span a {
+			color: inherit;
         }
 
         #main-content .main-content-body .message span:last-child {
@@ -115,7 +127,7 @@
     <div class="content-wrapper mobile-only">
         <div class="mobile-options">
             <span class="burger-menu" onclick="openSidebar()">
-                <img src="assets/icons/burger-menu.svg" height="24">
+                <img src="/assets/icons/burger-menu.svg" height="24">
             </span>
             <span class="logo logo-font" onclick="window.location=window.location.origin">
                 Izzy Sempill
@@ -139,6 +151,8 @@
 
                 <div class="message">
                     <span>Thank you for your purchase</span>
+                    <span class="sub">You should receive a confirmation email shortly (you may need to check your spam folder)</span>
+                    <span class="sub">If you haven’t received this email within an hour, please use the <a href="/contact">contact</a> form to get in touch.</span>
                     <span onclick="window.location='/'">Home</span>
                 </div>
 
@@ -169,6 +183,15 @@
         </div>
 
     </div>
+
+	<script>
+
+		(function() {
+            emptyCart();
+        })();
+
+	</script>
+
 
 </body>
 
