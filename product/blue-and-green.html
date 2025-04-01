@@ -376,6 +376,7 @@
                         </div>
 
                         <div class="product-details-description">
+
                             <span class="product-details-description-title">About this piece</span>
 
                             
@@ -388,10 +389,14 @@
                                 <span class="product-details-description-detail">Print of mixed media piece, originally created using watercolour, acrylics, oil pastels and posca pens</span>
                             
 
-                            <div class="product-details-description-detail">
+							<span class="product-details-description-detail">Free UK delivery, 48 hour tracked</span>
+							<span class="product-details-description-detail">Unfortunately I cannot offer delivery outside of the UK</span>
+							<span class="product-details-description-detail">3 available</span>
+
+                            <!--<div class="product-details-description-detail">
                                 <span class="bold">Free UK delivery. Please note:</span>
-                                <span >items are printed to order, so may not be shipped right away. If items are not immediately available, I will contact you to provide an estimated shipping date. Please also feel free to contact me before ordering. Customers should allow up to 3 weeks for orders to be dispatched. Unfortunately I cannot offer delivery outside of the UK. Thank you for understanding.</span>
-                            </div>
+                                <span>items are printed to order, so may not be shipped right away. If items are not immediately available, I will contact you to provide an estimated shipping date. Please also feel free to contact me before ordering. Customers should allow up to 3 weeks for orders to be dispatched. Unfortunately I cannot offer delivery outside of the UK. Thank you for understanding.</span>
+                            </div>-->
                             
                         </div>
 
@@ -439,8 +444,9 @@
 
             //add the product to the cart
             let stripeId = 'price_1QuzL7EnmUYXdCQkgAxeTbE9';
+			let maxQuantity = parseInt('3');
             btnEl.classList.add('is-adding');
-            addProductToCart(stripeId, 1)
+            addProductToCart(stripeId, 1, maxQuantity)
 
             //wait for 3 seconds before allowing the cart to be added to again
             setTimeout(() => {

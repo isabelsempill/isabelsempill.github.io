@@ -288,11 +288,6 @@
                                         <div class="quantity-wrapper">
                                             <span class="message">Quantity:</span>
                                             <select class="amount template-value-quantity template-value-id" onchange="updateQuantity(this)" >
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
                                             </select>
                                         </div>
                                         <span class="total template-value-total"></span>
@@ -473,6 +468,8 @@
 
             let currentCart = getCurrentCart();
 
+			console.log(currentCart)
+
             for(let i = 0; i<currentCart.items.length; i++) {
 
                 //get the item stored in the cart
@@ -481,6 +478,15 @@
                 // create a product card from the template
                 let template = document.getElementById("product-template");
                 let clone = template.content.cloneNode(true);
+
+				// add the QTY select options
+				let qtySelect = clone.querySelector('.template-value-quantity');
+				for (var so = 1; so <= parseInt(cartItem.maxQuantity); so++){
+					var opt = document.createElement('option');
+					opt.value = so;
+					opt.innerHTML = so;
+					qtySelect.appendChild(opt);
+				}
 
                 //set all the values on the cloned object
                 setLocalProductValues(cartItem, clone)
