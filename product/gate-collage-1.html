@@ -7,9 +7,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wght@100..800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Give+You+Glory&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="stylesheet" href="../assets/css/main-9fecd16c.css" />
     <link rel="icon" type="image/x-icon" href="/assets/images/favicon.png">
-    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/main-535075fd.js"></script>
     <title>Izzy Sempill</title>
 
     <style>
@@ -70,6 +70,21 @@
         }
 
         /* Buy Option */
+		.product-layout .product-details-section .product-details-buy-option select {
+			margin-top: 10px;
+			margin-bottom: 10px;
+			background: white;
+			color: var(--theme-green);
+			border: 1px solid var(--theme-green);
+			width: 100%;
+			height: 50px;
+			border-radius: 8px;
+			font-size: 14pt;
+			font-weight: 500;
+			letter-spacing: 1px;
+			text-align: center;
+        }
+
         .product-layout .product-details-section .product-details-buy-option button {
             width: 100%;
             height: 50px;
@@ -84,7 +99,6 @@
         }
 
         .product-layout .product-details-section .product-details-buy-option button.add {
-            margin-top: 20px;
             margin-bottom: 10px;
         }
 
@@ -137,7 +151,7 @@
         .product-layout .product-details-section .product-details-description .product-details-description-detail {
             display: block;
             color: var(--font-colour-subheading-light);
-            padding: 6px 0;
+            padding: 4px 0;
         }
 
         .product-layout .product-details-section .product-details-description .product-details-description-detail .bold {
@@ -356,10 +370,17 @@
                                 <span class="product-details-subheading">Collages</span>
                                 <span class="product-details-headings">Gate collage 1</span>
                             </div>
-                            <span class="product-details-price">£15</span>
+							
+								<span class="product-details-price" data-variant="var-price_1QuzLBEnmUYXdCQk3zBspbRY">£15</span>
+							
                         </div>
                         
                         <div class="product-details-buy-option">
+							<select id="product-variant-select" title="Select Variant" class="product-variant-select"  onchange="selectVariant(this)">
+								
+									<option value="price_1QuzLBEnmUYXdCQk3zBspbRY">A4 Print</option>
+								
+							</select>
                             <button class="add" onclick="addToCart(this)">
                                 <span class="add">Add to cart</span>
                                 <span class="adding"><img src="/assets/icons/loading.svg"></span>
@@ -371,25 +392,24 @@
 
                             <span class="product-details-description-title">About this piece</span>
 
+							
+								<span class="product-details-description-detail">Print of collage, originally created from artists' own photographs.</span>
+							
+							
+							<div class="divider sm"></div>
+
+							
+								<span class="product-details-description-detail" data-variant="var-price_1QuzLBEnmUYXdCQk3zBspbRY">A4 Print</span>
+								<span class="product-details-description-detail" data-variant="var-price_1QuzLBEnmUYXdCQk3zBspbRY">High quality inkjet print on 230gsm Pinnacle matte paper</span>
+								<span class="product-details-description-detail" data-variant="var-price_1QuzLBEnmUYXdCQk3zBspbRY">£15</span>
+								<span class="product-details-description-detail" data-variant="var-price_1QuzLBEnmUYXdCQk3zBspbRY">3 available</span>
                             
-                                <span class="product-details-description-detail">A4 print</span>
-                            
-                                <span class="product-details-description-detail">£15</span>
-                            
-                                <span class="product-details-description-detail">230gsm Pinnacle matte paper</span>
-                            
-                                <span class="product-details-description-detail">Print of collage, originally created from artists' own photographs.</span>
-                            
+
+							<div class="divider sm"></div>
 
 							<span class="product-details-description-detail">Free UK delivery, 48 hour tracked</span>
 							<span class="product-details-description-detail">Unfortunately I cannot offer delivery outside of the UK</span>
-							<span class="product-details-description-detail">3 available</span>
-
-                            <!--<div class="product-details-description-detail">
-                                <span class="bold">Free UK delivery. Please note:</span>
-                                <span>items are printed to order, so may not be shipped right away. If items are not immediately available, I will contact you to provide an estimated shipping date. Please also feel free to contact me before ordering. Customers should allow up to 3 weeks for orders to be dispatched. Unfortunately I cannot offer delivery outside of the UK. Thank you for understanding.</span>
-                            </div>-->
-                            
+							
                         </div>
 
                     </div>
@@ -428,17 +448,18 @@
 
     <script>
 
-
+		//
         function addToCart(btnEl) {
 
             //cant add if "is adding"
             if(btnEl.classList.contains('is-adding')) return;
 
-            //add the product to the cart
-            let stripeId = 'price_1QuzLBEnmUYXdCQk3zBspbRY';
-			let maxQuantity = parseInt('3');
+            // Update DOM
             btnEl.classList.add('is-adding');
-            addProductToCart(stripeId, 1, maxQuantity)
+
+			//add the product to the cart
+			let product = ALL_PRODUCTS[getSelectedProductVariant()]
+            addProductToCart(product.id, 1, product.qtyAvailable)
 
             //wait for 3 seconds before allowing the cart to be added to again
             setTimeout(() => {
@@ -448,7 +469,9 @@
 
         }
 
+		//
         function displayToast() {
+
             let toast = document.getElementById('toast')
             toast.classList.add('active')
             setTimeout(() => {
@@ -457,6 +480,36 @@
 
         }
 
+		//
+		function selectVariant(selectEl) {
+			updateDisplayingVariantDetails(selectEl.value);
+		}
+
+		//
+		function updateDisplayingVariantDetails(selectedVariant) {
+
+			let allVariantEls = document.querySelectorAll('*[data-variant]');
+			let validVariantEls = document.querySelectorAll('*[data-variant="var-' + selectedVariant + '"]');
+
+			for(let i = 0; i < allVariantEls.length; i++ ) {
+				allVariantEls[i].style.display = 'none';
+			}
+
+			for(let i = 0; i < validVariantEls.length; i++ ) {
+				validVariantEls[i].style.display = 'block';
+			}
+
+		}
+
+		//
+		function getSelectedProductVariant() {
+			return document.getElementById('product-variant-select').value;
+		}
+
+		//
+		(function() {
+			updateDisplayingVariantDetails(getSelectedProductVariant());
+		})()
 
     </script>
 

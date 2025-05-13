@@ -7,9 +7,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wght@100..800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Give+You+Glory&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="stylesheet" href="../assets/css/main-9fecd16c.css" />
     <link rel="icon" type="image/x-icon" href="/assets/images/favicon.png">
-    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/main-535075fd.js"></script>
     <script src="https://js.stripe.com/v3"></script>
     <title>Izzy Sempill</title>
 
@@ -79,16 +79,24 @@
         }
 
         #main-content .main-content-body .cart-wrapper .product-wrapper .product-title {
-            margin-bottom: 10px;
+			border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    		padding-bottom: 10px;
         }
 
         #main-content .main-content-body .cart-wrapper .product-wrapper .product-title .title {
-            font-size: 20px;
+            display: block;
+			font-size: 20px;
             font-weight: bold;
+        }
+
+		#main-content .main-content-body .cart-wrapper .product-wrapper .product-title .subtitle {
+            font-size: 14px;
+            font-weight: normal;
         }
 
         #main-content .main-content-body .cart-wrapper .product-wrapper .product-title .price {
             font-size: 14px;
+			align-self: center;
         }
 
         #main-content .main-content-body .cart-wrapper .product-wrapper .product-totals .quantity-wrapper .amount {
@@ -271,16 +279,17 @@
                         <!-- Product Template -->
                         <template id="product-template">
                             <div class="template-value-product-id">
-
-                            
                                 <div class="product-wrapper">  
                                     <!-- Image -->
                                     <div class="product-image">
                                         <img class="template-value-img-src">
                                     </div>
-                                    <!-- Total and Price -->
+                                    <!-- Title and Price -->
                                     <div class="product-title product-details">
-                                        <span class="title template-value-title"></span>
+										<div>
+											<span class="title template-value-title"></span>
+											<span class="subtitle template-value-subtitle"></span>
+										</div>
                                         <span class="price template-value-price"></span>
                                     </div>
                                     <!-- Quantity and Total -->
@@ -437,6 +446,7 @@
             //get the "local product" values
             let localProductItem = ALL_PRODUCTS[cartItem.price]; //"price" is the stripe ID
             let localProductName = localProductItem.name;
+            let localVariantName = localProductItem.variantName;
             let localProductPrice = localProductItem.price;
             let localProductTotal = (localProductPrice * cartItem.quantity);
             let localProductImageSrc = localProductItem.imageSrc
@@ -444,6 +454,7 @@
             //set the relevant values
             //productElem.querySelector('.template-value-product-id').setAttribute('data-sid', cartItem.price);
             productElem.querySelector('.template-value-title').innerText = localProductName;
+            productElem.querySelector('.template-value-subtitle').innerText = localVariantName;
             productElem.querySelector('.template-value-price').innerText = '£' + localProductPrice;
             productElem.querySelector('.template-value-quantity').value = cartItem.quantity;
             productElem.querySelector('.template-value-total').innerText = '£' + localProductTotal;
@@ -467,8 +478,6 @@
             cleanCart();
 
             let currentCart = getCurrentCart();
-
-			console.log(currentCart)
 
             for(let i = 0; i<currentCart.items.length; i++) {
 
