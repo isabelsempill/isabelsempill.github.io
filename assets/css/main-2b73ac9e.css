@@ -706,6 +706,10 @@ a.product {
         display: block!important;
     }
 
+	.mobile-align-left {
+		text-align: left!important;
+	}
+
     #footer .content-wrapper .nav ul li {
         display: block;
         float: none;
