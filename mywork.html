@@ -1,83 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Izzy Sempill Art - Contact Page">
+	<meta name="description" content="Izzy Sempill Art - My Work">
 	<meta name="keywords" content="Izzy Sempill, Sempill, Isabel Sempill, Art">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wght@100..800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Give+You+Glory&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/css/main-2b73ac9e.css" />
+    <link rel="stylesheet" href="assets/css/main-2b73ac9e.css" />
     <link rel="icon" type="image/x-icon" href="/assets/images/favicon.png">
-    <script src="/assets/js/main-3b0dd11b.js"></script>
-    <title>Izzy Sempill - Contact</title>
+    <script src="assets/js/main-3b0dd11b.js"></script>
+    <title>Izzy Sempill - My Work</title>
 
     <style>
 
-        #page-container {
-            display: grid;
-            grid-template-rows: auto 1fr auto;
+        #main-content .main-content-header .bg-image {
+            background-image: url(assets/images/headers/cover-my-work.jpg);
+            background-position-y: bottom;
         }
-
-        #contact-form {
-            font-size: 18px;
-            font-family: 'Anek Latin'!important;
-        }
-
-        .major {
-            text-align: center;
-            margin-bottom: 20px;
-            font-size: 28px;
-        }
-
-        #contact-form .row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            width: 100%;
-        }
-
-        input, textarea {
-            width: 100%;
-            font-size: inherit;
-            padding: 8px;
-            box-sizing: border-box;
-            background-color: white;
-            outline: none;
-            border: 2px solid var(--theme-green);
-            border-radius: 3px;
-        }
-
-        textarea {
-            resize: none;
-            font-family: 'Anek Latin'!important;
-        }
-
-        .name-input-wrapper, .email-input-wrapper {
-            flex: 1 1 calc(50% - 10px)
-        }
-
-        .message-input-wrapper {
-            flex: 0 0 100%;
-        }
-
-        .actions-wrapper {
-            display: flex;
-            gap: 10px;
-        }
-
-        .actions-wrapper input {
-            cursor: pointer;
-        }
-
-        .actions-wrapper .primary {
-            background: var(--theme-green);
-            color: white;
-        }
-
-        
 
     </style>
 
@@ -92,7 +35,7 @@
   gtag('config', 'G-N0HJ9SJ581');
 </script>
 
-<body style="overflow-x: none;">
+<body>
     
     <!-- Side Bar -->
     <div id="sidebar-shield">
@@ -174,45 +117,51 @@
         <!-- Main Content -->
         <div id="main-content" class="home-page">
             
-            <!-- Page Subheading -->
-            <div class="main-content-subheading">
-                <span class="text-block-subheading">Contact</span>
+            <div class="main-content-header parallax-scroll-off">
+                <div class="bg-image"></div>
+                <div class="main-content-title">
+                    <span>My Work</span>
+                </div>
             </div>
 
-            <!-- Main Content -->
+			<!-- Page Subheading -->
+            <div class="main-content-subheading">
+                <span class="text-block-subheading">Example of My Work</span>
+            </div>
+
+            <!-- Page Body -->
             <div class="main-content-body">
 
-                 <!-- Contact Form -->
-                <div id="contact-form" class="contact-form">
-					<header class="major logo-font">
-						<span>Get in touch!</span>
-					</header>
-					<form method="post" action="https://formspree.io/f/mwpvydrj" >
-						<div class="row">
-							<div class="name-input-wrapper">
-								<input type="text" name="name" id="name" value="" placeholder="Name" />
-							</div>
-							<div class="email-input-wrapper">
-								<input type="email" name="email" id="email" value="" placeholder="Email" />
-							</div>
-							<div class="message-input-wrapper">
-								<textarea name="message" id="message" placeholder="Enter your message" rows="6" resize="none"></textarea>
-							</div>
-							<div class="actions-wrapper">
-								<input type="submit" value="Send Message" class="primary" />
-								<input type="reset" value="Reset" />
-							</div>
-						</div>
-					</form>
+				<!-- Top Message -->
+				<div class="content-element text-block mobile-align-left" style="text-align: center;">
+					<p class="text-block-content">My Print Shop includes some of my edited and refined work, but art should also be about the process! Teaching has provided me with a broad range of creative skills and the opportunity to keep trying new techniques, always learning as I go. Below are some pieces, not for sale, that I have enjoyed making in recent years. I also include examples of work in progress on my Updates page.</p>
 				</div>
 
+				<div class="divider"></div>
 
-            </div>
+				<!-- Image Grid (Non-Mobile) -->
+                <div class="image-grid-layout">
+                    <div class="grid-item"><img src="assets/images/examples/example-work-1.png"></div>
+                    <div class="grid-item"><img src="assets/images/examples/example-work-2.png"></div>
+                    <div class="grid-item"><img src="assets/images/examples/example-work-3.png"></div>
+                    <div class="grid-item"><img src="assets/images/examples/example-work-4.png"></div>
+                    <div class="grid-item"><img src="assets/images/examples/example-work-5.png"></div>
+                    <div class="grid-item"><img src="assets/images/examples/example-work-6.png"></div>
+                    <div class="grid-item"><img src="assets/images/examples/example-work-7.png"></div>
+                    <div class="grid-item"><img src="assets/images/examples/example-work-8.png"></div>
+                    <div class="grid-item"><img src="assets/images/examples/example-work-9.png"></div>
+                    <div class="grid-item"><img src="assets/images/examples/example-work-10.png"></div>
+                    <div class="grid-item"><img src="assets/images/examples/example-work-11.png"></div>
+                    <div class="grid-item"><img src="assets/images/examples/example-work-12.png"></div>
+                    <div class="grid-item"><img src="assets/images/examples/example-work-13.png"></div>
+                    <div class="grid-item"><img src="assets/images/examples/example-work-14.png"></div>
+                    <div class="grid-item"><img src="assets/images/examples/example-work-15.jpg"></div>
+                </div>
 
-        </div>
+			</div>
 
-        <!-- Footer -->
-        <div id="footer">
+            <!-- Footer -->
+            <div id="footer">
 
     <div class="content-wrapper">
 
@@ -237,5 +186,4 @@
     </div>
 
 </body>
-
 </html>

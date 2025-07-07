@@ -4,14 +4,16 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Izzy Sempill Art - Work Updates">
+	<meta name="keywords" content="Izzy Sempill, Sempill, Isabel Sempill, Art">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wght@100..800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Give+You+Glory&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/main-2b73ac9e.css" />
     <link rel="icon" type="image/x-icon" href="/assets/images/favicon.png">
-    <script src="assets/js/main-eff4185c.js"></script>
-    <title>Izzy Sempill</title>
+    <script src="assets/js/main-3b0dd11b.js"></script>
+    <title>Izzy Sempill - Updates</title>
 
     <style>
 
@@ -41,6 +43,35 @@
             height: 100%;
             width: 100%
         }
+
+		.accordian .header {
+			display: flex;
+			gap: 10px;
+    		align-items: center;
+			cursor: pointer;
+		}
+
+		.accordian .header .icon {
+		    transform: rotate(270deg);
+			transition: transform 0.3s ease-out;
+		}
+
+		.accordian.active .header .icon {
+		    transform: rotate(360deg);
+		}
+
+		.accordian .header .title {
+			color: var(--font-colour-subheading);
+			font-size: var(--font-size-heading);
+			font-weight: 500;
+		}
+
+		.accordian .content {
+			max-height: 0;
+			overflow: hidden;
+			transition: max-height 0.35s ease-out;
+		}
+
 
     </style>
 
@@ -110,6 +141,7 @@
             <ul>
                 <li><a href="/">About</a></li>
                 <li><a href="/updates">Updates</a></li>
+                <li><a href="/mywork">My Work</a></li>
                 <li><a href="/printshop">Print Shop</a></li>
                 <li><a href="/cart"> <img src="/assets/icons/cart.svg"></a></li>
             </ul>
@@ -150,216 +182,353 @@
 
             <div class="main-content-body">
 
-				<!-- National Festival of Making -->
-                <div class="content-element text-block" style="padding-top:24px">
-                    <p class="text-block-subheading" style="margin-top: 0;">National Festival of Making</p>
-                    <p class="text-block-subheading">Blackburn</p>     
-                    <p class="text-block-subheading">5 & 6 July 2025</p>          
+				<!-- National Festival of Making - Accordian -->
+				<div class="accordian">
 
-                    <p class="text-block-content">I’m so excited to be leading collage workshops at the National Festival of Making in Blackburn! I’ll be next door to the British Textile Biennial’s pop-up exhibition about Wakes Week.</p>
-                    <p class="text-block-content">From the late 19th to mid 20th Century, Wakes Week was the annual holiday across Lancashire and beyond. Mills and factories would close down for maintenance, and all the workers and their families would go on holiday at once. Families often travelled by rail to the North West coast, visiting Southport, Morecambe and - the most popular - Blackpool.</p>
-                    <p class="text-block-content">Through this exhibition, British Textile Biennial share archival material documenting Wakes Week, including postcards. I’ll be next door, running a collage drop-in where visitors can recreate their own postcard, using copies of the archival imagery combined with photos from contemporary magazines, second-hand books and decorated collage papers.</p>
-                    <p class="text-block-content">Photos to follow! Find out more about the event in the <a href="https://festivalofmaking.co.uk/whats-on/?type=workshops" style="color: inherit;">National Festival of Making programme.</a></p>
-                </div>
-
-                <div class="divider"></div>
-
-				<!-- Handmade Productions -->
-                <div class="content-element text-block" style="padding-top:24px">
-                    <p class="text-block-subheading" style="margin-top: 0;">Handmade Productions</p>
-                    <p class="text-block-subheading">Hebden Bridge Summer Parade</p>     
-                    <p class="text-block-subheading">June 2025</p>          
-
-                    <p class="text-block-content">I really enjoyed working with Handmade Productions in the lead-up to their summer parade. The theme was Water, Woods and Wilderness, to celebrate local wildlife. I helped the artists to prep the amazing costumes, which involved lots of cutting cardboard, measuring fabric and stapling! I also supported with community workshops at the Handmade warehouse, including public open sessions and an afternoon with people seeking asylum. Due to space limitations I tend to work in 2D, so this was a great opportunity to develop my 3D making skills.</p>
-                    <p class="text-block-content">Handmade Productions are all about creativity in the community and I was so pleased to be involved in this wonderful event.</p>
-                </div>
-
-				<!-- Additional Images (Default Screens) -->
-                <div class="content-element image-grid-layout non-mobile" style="padding-bottom: 28px;">
-                    <div class="grid-item"><img src="assets/images/exhibitions/handmade-productions/handmade_1.jpg"></div>
-                    <div class="grid-item"><img src="assets/images/exhibitions/handmade-productions/handmade_2.jpg"></div>
-                    <div class="grid-item"><img src="assets/images/exhibitions/handmade-productions/handmade_3.jpg"></div>
-                </div>
-
-                <!-- Additional Images (Mobile) -->
-                <div class="image-hscroller mobile-only" style="padding-bottom: 28px;">
-                    <div class="scroll-wrapper">
-                        <div class="hscroller-item"><img src="assets/images/exhibitions/handmade-productions/handmade_1.jpg"></div>
-                        <div class="hscroller-item"><img src="assets/images/exhibitions/handmade-productions/handmade_2.jpg"></div>
-                        <div class="hscroller-item"><img src="assets/images/exhibitions/handmade-productions/handmade_3.jpg"></div>
-                        <div class="hscroller-item"><img src="assets/images/exhibitions/handmade-productions/handmade_4.jpg"></div>
-                    </div>
-                </div>
-
-                <div class="divider"></div>
-
-				<!-- Coming Soon (Risograph) -->
-                <div class="content-element text-block" style="padding-top:24px">
-                    <p class="text-block-subheading" style="margin-top: 0;">Coming soon</p>                   
-                    <p class="text-block-content">Recently I’ve been making monoprints, experimenting with organic shapes and mark-making to create a variety of textures (left image - black and white).</p>
-                    <p class="text-block-content">I wanted to push this idea further, so I digitised my work and printed copies using the Risograph process - a Japanese photocopying and printing method that came about in the 1980s and is still popular with designers today. Riso is known for its vibrant colours, limited palette and charming imperfections.</p>
-                    <p class="text-block-content">I’ve been playing with compositions - layering the shapes I monoprinted and Riso printing them in different colours (second and third images). It’s been an experimental process because you’re never quite sure how Riso prints will turn out, but I’m pleased with the results!</p>
-                    <p class="text-block-content">My limited edition A4 blue & pink Risograph series will soon be available to purchase through my Print Shop.</p>
-                </div>
-
-				<!-- Additional Images (Default Screens) -->
-                <div class="content-element image-grid-layout non-mobile" style="padding-bottom: 28px;">
-                    <div class="grid-item"><img src="assets/images/exhibitions/risograph/ris_1.jpg"></div>
-                    <div class="grid-item"><img src="assets/images/exhibitions/risograph/ris_2.jpg"></div>
-                    <div class="grid-item"><img src="assets/images/exhibitions/risograph/ris_3.jpg"></div>
-                </div>
-
-                <!-- Additional Images (Mobile) -->
-                <div class="image-hscroller mobile-only" style="padding-bottom: 28px;">
-                    <div class="scroll-wrapper">
-                        <div class="hscroller-item"><img src="assets/images/exhibitions/risograph/ris_1.jpg"></div>
-                        <div class="hscroller-item"><img src="assets/images/exhibitions/risograph/ris_2.jpg"></div>
-                        <div class="hscroller-item"><img src="assets/images/exhibitions/risograph/ris_3.jpg"></div>
-                    </div>
-                </div>
-
-                <div class="divider"></div>
-
-				<!-- Fine Art -->
-                <div class="content-element text-block" style="padding-top:24px">
-                    <p class="text-block-subheading" style="margin-top: 0;">Workshops with BA Fine Art Students</p>
-                    <p class="text-block-subheading">University of Salford</p>     
-                    <p class="text-block-subheading">March 2025</p>                        
-                    <p class="text-block-content">Participants were invited to bring their unwanted art (e.g. testers, or a piece they'd previously given up on) and rework it into something new. I offered up some of my old work as well. The aim was to create a relaxed atmosphere where they could forget the isolation and 'pressure to produce' we can feel when making art, studying at uni, and more generally in our day to day lives.</p>
-                    <p class="text-block-content">The workshops were very well-received. Participant feedback: “<i>I feel much more awake now and my mood has lifted. It has been great to create work without worrying about the outcome. I'd like a longer session - it was so fun! ”</i></p>
-                </div>
-
-                <!-- Additional Images (Default Screens) -->
-                <div class="content-element image-grid-layout non-mobile" style="padding-bottom: 28px;">
-                    <div class="grid-item"><img src="assets/images/exhibitions/fine-art/fa_1.jpg"></div>
-                    <div class="grid-item"><img src="assets/images/exhibitions/fine-art/fa_2.jpg"></div>
-                    <div class="grid-item"><img src="assets/images/exhibitions/fine-art/fa_3.jpg"></div>
-                    <div class="grid-item"><img src="assets/images/exhibitions/fine-art/fa_4.jpg"></div>
-                    <div class="grid-item"><img src="assets/images/exhibitions/fine-art/fa_5.jpg"></div>
-                    <div class="grid-item"><img src="assets/images/exhibitions/fine-art/fa_6.jpg"></div>
-                </div>
-
-                <!-- Additional Images (Mobile) -->
-                <div class="image-hscroller mobile-only" style="padding-bottom: 28px;">
-                    <div class="scroll-wrapper">
-                        <div class="hscroller-item"><img src="assets/images/exhibitions/fine-art/fa_1.jpg"></div>
-                        <div class="hscroller-item"><img src="assets/images/exhibitions/fine-art/fa_2.jpg"></div>
-                        <div class="hscroller-item"><img src="assets/images/exhibitions/fine-art/fa_3.jpg"></div>
-                        <div class="hscroller-item"><img src="assets/images/exhibitions/fine-art/fa_4.jpg"></div>
-                        <div class="hscroller-item"><img src="assets/images/exhibitions/fine-art/fa_5.jpg"></div>
-                        <div class="hscroller-item"><img src="assets/images/exhibitions/fine-art/fa_6.jpg"></div>
-                        <div class="hscroller-item"><img src="assets/images/exhibitions/fine-art/fa_7.jpg"></div>
-                        <div class="hscroller-item"><img src="assets/images/exhibitions/fine-art/fa_8.jpg"></div>
-                    </div>
-                </div>
-
-                <div class="divider"></div>
-
-				<!-- Work in progress -->
-				<div class="content-element text-block" style="padding-top:24px">
-					<p class="text-block-subheading" style="margin-top: 0;">Work in progress</p>                      
-					<p class="text-block-content">I started experimenting with texture paste last year. More recently, I have been using it with watercolour on wood boards. These materials allow me to create a sense of movement and energy - particularly with the blue tones, which are reminiscent of crashing waves. I'm really enjoying the process and will continue to develop this series.</p>
-				</div>
-
-				<!-- Additional Images (Default Screens) -->
-				<div class="content-element image-grid-layout non-mobile" style="padding-bottom: 28px;">
-					<div class="grid-item"><img src="assets/images/exhibitions/coming-soon/soon_2.jpg"></div>
-					<div class="grid-item"><img src="assets/images/exhibitions/coming-soon/soon_1.jpg"></div>
-					<div class="grid-item"><img src="assets/images/exhibitions/coming-soon/soon_3.jpg"></div>
-				</div>
-
-				<!-- Additional Images (Mobile) -->
-				<div class="image-hscroller mobile-only" style="padding-bottom: 28px;">
-					<div class="scroll-wrapper">
-						<div class="hscroller-item"><img src="assets/images/exhibitions/coming-soon/soon_2.jpg"></div>
-						<div class="hscroller-item"><img src="assets/images/exhibitions/coming-soon/soon_1.jpg"></div>
-						<div class="hscroller-item"><img src="assets/images/exhibitions/coming-soon/soon_3.jpg"></div>
+					<div class="header">
+						<img class="icon" src="assets/icons/chevron-down.svg" height="20">
+						<div class="title">National Festival of Making 2025, postcard collage workshops</div>
 					</div>
+					<div class="content">
+
+						<!-- National Festival of Making -->
+						<div class="content-element text-block" style="padding-top:24px">
+							<p class="text-block-subheading">Blackburn</p>     
+							<p class="text-block-subheading">5 & 6 July 2025</p>          
+
+							<p class="text-block-content">I had the best weekend leading collage workshops at the National Festival of Making!</p>
+							<p class="text-block-content">I was next door to British Textile Biennial’s beautiful pop-up exhibition about Wakes Week, pictured below.</p>
+							<p class="text-block-content">From the late 19th to mid 20th Century, Wakes Week was the annual holiday across Lancashire and beyond. Mills and factories would close down for maintenance, and all the workers and their families would go on holiday at once. They often travelled to seaside towns like Blackpool by rail.</p>
+							<p class="text-block-content">The exhibition includes archival photographs and postcards from Wakes Weeks in the 1930s.</p>
+							<p class="text-block-content">In my workshop, visitors created their own contemporary postcards. They could combine the archival Wakes Week imagery, decorated collage papers, and photos from second-hand books and magazines.</p>
+							<p class="text-block-content">The photos below show a selection of my example postcards and outcomes from visitors. Thanks to everyone who came along - I had a great time!</p>
+						</div>
+
+						<!-- Additional Images (Default Screens) -->
+						<div class="content-element image-grid-layout non-mobile" style="padding-bottom: 28px;">
+							<div class="grid-item"><img src="assets/images/exhibitions/festival-of-making/nfom_1.jpg"></div>
+							<div class="grid-item"><img src="assets/images/exhibitions/festival-of-making/nfom_2.jpg"></div>
+							
+							
+							<div class="grid-item"><img src="assets/images/exhibitions/festival-of-making/nfom_5.jpg"></div>
+							
+							<div class="grid-item"><img src="assets/images/exhibitions/festival-of-making/nfom_7.jpg"></div>
+							
+							<div class="grid-item"><img src="assets/images/exhibitions/festival-of-making/nfom_9.jpg"></div>
+
+						</div>
+
+						<!-- Additional Images (Mobile) -->
+						<div class="image-hscroller mobile-only" style="padding-bottom: 28px;">
+							<div class="scroll-wrapper">
+								<div class="hscroller-item"><img src="assets/images/exhibitions/festival-of-making/nfom_1.jpg"></div>
+								<div class="hscroller-item"><img src="assets/images/exhibitions/festival-of-making/nfom_2.jpg"></div>
+								<div class="hscroller-item"><img src="assets/images/exhibitions/festival-of-making/nfom_3.jpg"></div>
+								<div class="hscroller-item"><img src="assets/images/exhibitions/festival-of-making/nfom_4.jpg"></div>
+								<div class="hscroller-item"><img src="assets/images/exhibitions/festival-of-making/nfom_5.jpg"></div>
+								<div class="hscroller-item"><img src="assets/images/exhibitions/festival-of-making/nfom_6.jpg"></div>
+								<div class="hscroller-item"><img src="assets/images/exhibitions/festival-of-making/nfom_7.jpg"></div>
+								<div class="hscroller-item"><img src="assets/images/exhibitions/festival-of-making/nfom_8.jpg"></div>
+								<div class="hscroller-item"><img src="assets/images/exhibitions/festival-of-making/nfom_9.jpg"></div>
+								<div class="hscroller-item"><img src="assets/images/exhibitions/festival-of-making/nfom_10.jpg"></div>
+								<div class="hscroller-item"><img src="assets/images/exhibitions/festival-of-making/nfom_11.jpg"></div>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+
+                <div class="divider"></div>
+
+				<!-- Handmade Productions - Accordian -->
+				<div class="accordian">
+
+					<div class="header">
+						<img class="icon" src="assets/icons/chevron-down.svg" height="20">
+						<div class="title">Handmade Productions, Hebden Bridge Summer Parade 2025</div>
+					</div>
+					<div class="content">
+
+						<!-- Handmade Productions -->
+						<div class="content-element text-block" style="padding-top:24px">
+							<p class="text-block-subheading">Hebden Bridge Summer Parade</p>     
+							<p class="text-block-subheading">June 2025</p>          
+
+							<p class="text-block-content">I really enjoyed working with Handmade Productions in the lead-up to their Summer Parade. The theme was Water, Woods and Wilderness, to celebrate local wildlife. I helped the artists to prep the amazing costumes, which involved lots of cutting cardboard, measuring fabric and stapling! I also supported with community workshops at the Handmade warehouse, including public open sessions and an afternoon with people seeking asylum. I helped to build the curlew bird puppets and then carried one in the parade.</p>
+							<p class="text-block-content">Due to space limitations I tend to work in 2D, so this placement was a great opportunity to develop my 3D making skills.</p>
+							<p class="text-block-content">Handmade Productions are all about creativity in the community and I was so pleased to be involved in the making of this wonderful event. The parade was magical and received loads of positive feedback. My photos here really don't do it justice! Check out the Handmade Productions website or social media to see their stunning work.</p>
+						</div>
+
+						<!-- Additional Images (Default Screens) -->
+						<div class="content-element image-grid-layout non-mobile" style="padding-bottom: 28px;">
+							<div class="grid-item"><img src="assets/images/exhibitions/handmade-productions/handmade_1.jpg"></div>
+							<div class="grid-item"><img src="assets/images/exhibitions/handmade-productions/handmade_2.jpg"></div>
+							<div class="grid-item"><img src="assets/images/exhibitions/handmade-productions/handmade_3.jpg"></div>
+							<div class="grid-item"><img src="assets/images/exhibitions/handmade-productions/handmade_4.jpg"></div>
+							<div class="grid-item"><img src="assets/images/exhibitions/handmade-productions/handmade_5.jpg"></div>
+							<div class="grid-item"><img src="assets/images/exhibitions/handmade-productions/handmade_6.jpg"></div>
+						</div>
+
+						<!-- Additional Images (Mobile) -->
+						<div class="image-hscroller mobile-only" style="padding-bottom: 28px;">
+							<div class="scroll-wrapper">
+								<div class="hscroller-item"><img src="assets/images/exhibitions/handmade-productions/handmade_1.jpg"></div>
+								<div class="hscroller-item"><img src="assets/images/exhibitions/handmade-productions/handmade_2.jpg"></div>
+								<div class="hscroller-item"><img src="assets/images/exhibitions/handmade-productions/handmade_3.jpg"></div>
+								<div class="hscroller-item"><img src="assets/images/exhibitions/handmade-productions/handmade_4.jpg"></div>
+								<div class="hscroller-item"><img src="assets/images/exhibitions/handmade-productions/handmade_5.jpg"></div>
+								<div class="hscroller-item"><img src="assets/images/exhibitions/handmade-productions/handmade_6.jpg"></div>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+
+                <div class="divider"></div>
+
+				<!-- Work in progress - Accordian -->
+				<div class="accordian">
+
+					<div class="header">
+						<img class="icon" src="assets/icons/chevron-down.svg" height="20">
+						<div class="title">Work in progress: monoprints and risograph</div>
+					</div>
+					<div class="content">
+
+						<!-- Coming Soon (Risograph) -->
+						<div class="content-element text-block" style="padding-top:24px">
+							<p class="text-block-subheading" style="margin-top: 0;">Coming soon</p>                   
+							<p class="text-block-content">Recently I’ve been making monoprints, experimenting with organic shapes and mark-making to create a variety of textures (left image - black and white).</p>
+							<p class="text-block-content">I wanted to push this idea further, so I digitised my work and printed copies using the Risograph process - a Japanese photocopying and printing method that came about in the 1980s and is still popular with designers today. Riso is known for its vibrant colours, limited palette and charming imperfections.</p>
+							<p class="text-block-content">I’ve been playing with compositions - layering the shapes I monoprinted and Riso printing them in different colours (second and third images). It’s been an experimental process because you’re never quite sure how Riso prints will turn out, but I’m pleased with the results!</p>
+							<p class="text-block-content">My limited edition A4 blue & pink Risograph series will soon be available to purchase through my Print Shop.</p>
+						</div>
+
+						<!-- Additional Images (Default Screens) -->
+						<div class="content-element image-grid-layout non-mobile" style="padding-bottom: 28px;">
+							<div class="grid-item"><img src="assets/images/exhibitions/risograph/ris_1.jpg"></div>
+							<div class="grid-item"><img src="assets/images/exhibitions/risograph/ris_2.jpg"></div>
+							<div class="grid-item"><img src="assets/images/exhibitions/risograph/ris_3.jpg"></div>
+						</div>
+
+						<!-- Additional Images (Mobile) -->
+						<div class="image-hscroller mobile-only" style="padding-bottom: 28px;">
+							<div class="scroll-wrapper">
+								<div class="hscroller-item"><img src="assets/images/exhibitions/risograph/ris_1.jpg"></div>
+								<div class="hscroller-item"><img src="assets/images/exhibitions/risograph/ris_2.jpg"></div>
+								<div class="hscroller-item"><img src="assets/images/exhibitions/risograph/ris_3.jpg"></div>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+
+                <div class="divider"></div>
+
+				<!-- Fine Art - Accordian -->
+				<div class="accordian">
+
+					<div class="header">
+						<img class="icon" src="assets/icons/chevron-down.svg" height="20">
+						<div class="title">University of Salford, workshops with BA Fine Art students</div>
+					</div>
+					<div class="content">
+
+						<!-- Fine Art -->
+						<div class="content-element text-block" style="padding-top:24px">
+							<p class="text-block-subheading">University of Salford</p>     
+							<p class="text-block-subheading">March 2025</p>                        
+							<p class="text-block-content">Participants were invited to bring their unwanted art (e.g. testers, or a piece they'd previously given up on) and rework it into something new. I offered up some of my old work as well. The aim was to create a relaxed atmosphere where they could forget the isolation and 'pressure to produce' we can feel when making art, studying at uni, and more generally in our day to day lives.</p>
+							<p class="text-block-content">The workshops were very well-received. Participant feedback: “<i>I feel much more awake now and my mood has lifted. It has been great to create work without worrying about the outcome. I'd like a longer session - it was so fun! ”</i></p>
+						</div>
+
+						<!-- Additional Images (Default Screens) -->
+						<div class="content-element image-grid-layout non-mobile" style="padding-bottom: 28px;">
+							<div class="grid-item"><img src="assets/images/exhibitions/fine-art/fa_1.jpg"></div>
+							<div class="grid-item"><img src="assets/images/exhibitions/fine-art/fa_2.jpg"></div>
+							<div class="grid-item"><img src="assets/images/exhibitions/fine-art/fa_3.jpg"></div>
+							<div class="grid-item"><img src="assets/images/exhibitions/fine-art/fa_4.jpg"></div>
+							<div class="grid-item"><img src="assets/images/exhibitions/fine-art/fa_5.jpg"></div>
+							<div class="grid-item"><img src="assets/images/exhibitions/fine-art/fa_6.jpg"></div>
+						</div>
+
+						<!-- Additional Images (Mobile) -->
+						<div class="image-hscroller mobile-only" style="padding-bottom: 28px;">
+							<div class="scroll-wrapper">
+								<div class="hscroller-item"><img src="assets/images/exhibitions/fine-art/fa_1.jpg"></div>
+								<div class="hscroller-item"><img src="assets/images/exhibitions/fine-art/fa_2.jpg"></div>
+								<div class="hscroller-item"><img src="assets/images/exhibitions/fine-art/fa_3.jpg"></div>
+								<div class="hscroller-item"><img src="assets/images/exhibitions/fine-art/fa_4.jpg"></div>
+								<div class="hscroller-item"><img src="assets/images/exhibitions/fine-art/fa_5.jpg"></div>
+								<div class="hscroller-item"><img src="assets/images/exhibitions/fine-art/fa_6.jpg"></div>
+								<div class="hscroller-item"><img src="assets/images/exhibitions/fine-art/fa_7.jpg"></div>
+								<div class="hscroller-item"><img src="assets/images/exhibitions/fine-art/fa_8.jpg"></div>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+
+                <div class="divider"></div>
+
+				<!-- Texture paste on wood boards - Accordian -->
+				<div class="accordian">
+
+					<div class="header">
+						<img class="icon" src="assets/icons/chevron-down.svg" height="20">
+						<div class="title">Work in progress: texture paste on wood boards</div>
+					</div>
+					<div class="content">
+
+						<!-- Work in progress -->
+						<div class="content-element text-block" style="padding-top:24px">
+							<p class="text-block-subheading" style="margin-top: 0;">Work in progress</p>                      
+							<p class="text-block-content">I started experimenting with texture paste last year. More recently, I have been using it with watercolour on wood boards. These materials allow me to create a sense of movement and energy - particularly with the blue tones, which are reminiscent of crashing waves. I'm really enjoying the process and will continue to develop this series.</p>
+						</div>
+
+						<!-- Additional Images (Default Screens) -->
+						<div class="content-element image-grid-layout non-mobile" style="padding-bottom: 28px;">
+							<div class="grid-item"><img src="assets/images/exhibitions/coming-soon/soon_2.jpg"></div>
+							<div class="grid-item"><img src="assets/images/exhibitions/coming-soon/soon_1.jpg"></div>
+							<div class="grid-item"><img src="assets/images/exhibitions/coming-soon/soon_3.jpg"></div>
+						</div>
+
+						<!-- Additional Images (Mobile) -->
+						<div class="image-hscroller mobile-only" style="padding-bottom: 28px;">
+							<div class="scroll-wrapper">
+								<div class="hscroller-item"><img src="assets/images/exhibitions/coming-soon/soon_2.jpg"></div>
+								<div class="hscroller-item"><img src="assets/images/exhibitions/coming-soon/soon_1.jpg"></div>
+								<div class="hscroller-item"><img src="assets/images/exhibitions/coming-soon/soon_3.jpg"></div>
+							</div>
+						</div>
+
+					</div>
+
 				</div>
 
 				<div class="divider"></div>
 
-                <!-- Into the Light Intro -->
-                <div class="content-element text-block" style="padding-top:24px">
-                    <p class="text-block-subheading" style="margin-top: 0;">Into the Light</p>
-                    <p class="text-block-subheading">Platform One Gallery, Todmorden</p>     
-                    <p class="text-block-subheading">March - April 2025</p>                        
-                    <p class="text-block-content">Three of my texture paste pieces have been included in Platform One Gallery's open exhibition, Into the Light, which welcomes and celebrates the Spring. The pink/orange piece is inspired by sunset skies, and the two landscapes aim to capture the ever-changing light in the beautiful Calder Valley.</p>
-                </div>
+				<!-- Platform One Gallery - Accordian -->
+				<div class="accordian">
 
-                <!-- Additional Images (Default Screens) -->
-                <div class="content-element image-grid-layout non-mobile" style="padding-bottom: 28px;">
-                    <div class="grid-item"><img src="assets/images/exhibitions/platform-one/p1.jpg"></div>
-                    <div class="grid-item"><img src="assets/images/exhibitions/platform-one/p2.jpg"></div>
-                    <div class="grid-item"><img src="assets/images/exhibitions/platform-one/p3.jpg"></div>
-                </div>
+					<div class="header">
+						<img class="icon" src="assets/icons/chevron-down.svg" height="20">
+						<div class="title">Platform One Gallery, Into the Light exhibition</div>
+					</div>
+					<div class="content">
 
-                <!-- Additional Images (Mobile) -->
-                <div class="image-hscroller mobile-only" style="padding-bottom: 28px;">
-                    <div class="scroll-wrapper">
-                        <div class="hscroller-item"><img src="assets/images/exhibitions/platform-one/p1.jpg"></div>
-                        <div class="hscroller-item"><img src="assets/images/exhibitions/platform-one/p2.jpg"></div>
-                        <div class="hscroller-item"><img src="assets/images/exhibitions/platform-one/p3.jpg"></div>
-                        <div class="hscroller-item"><img src="assets/images/exhibitions/platform-one/p5.jpg"></div>
-                        <div class="hscroller-item"><img src="assets/images/exhibitions/platform-one/p4.jpg"></div>
-                    </div>
-                </div>
+						<!-- Into the Light Intro -->
+						<div class="content-element text-block" style="padding-top:24px">
+							<p class="text-block-subheading">Platform One Gallery, Todmorden</p>     
+							<p class="text-block-subheading">March - April 2025</p>                        
+							<p class="text-block-content">Three of my texture paste pieces have been included in Platform One Gallery's open exhibition, Into the Light, which welcomes and celebrates the Spring. The pink/orange piece is inspired by sunset skies, and the two landscapes aim to capture the ever-changing light in the beautiful Calder Valley.</p>
+						</div>
 
-                <div class="divider"></div>
+						<!-- Additional Images (Default Screens) -->
+						<div class="content-element image-grid-layout non-mobile" style="padding-bottom: 28px;">
+							<div class="grid-item"><img src="assets/images/exhibitions/platform-one/p1.jpg"></div>
+							<div class="grid-item"><img src="assets/images/exhibitions/platform-one/p2.jpg"></div>
+							<div class="grid-item"><img src="assets/images/exhibitions/platform-one/p3.jpg"></div>
+						</div>
 
-                <!-- Blackburn Open Exhibition Intro -->
-                <div class="content-element text-block" style="padding-top:24px">
-                    <p class="text-block-subheading" style="margin-top: 0;">Blackburn Open Exhibition</p>
-                    <p class="text-block-subheading">Blackburn Museum & Art Gallery</p>     
-                    <p class="text-block-subheading">Jan - March 2025</p>                        
-                    <p class="text-block-content">My acrylic painting of my Nan's living room was included in the BM&AG 2025 Open Exhibition. This piece is special to me because her house has been such a stable and consistent place throughout my life, but I also think it's a familiar and comforting scene that many people can recognise or identify with in their own ways.</p>
-                </div>
+						<!-- Additional Images (Mobile) -->
+						<div class="image-hscroller mobile-only" style="padding-bottom: 28px;">
+							<div class="scroll-wrapper">
+								<div class="hscroller-item"><img src="assets/images/exhibitions/platform-one/p1.jpg"></div>
+								<div class="hscroller-item"><img src="assets/images/exhibitions/platform-one/p2.jpg"></div>
+								<div class="hscroller-item"><img src="assets/images/exhibitions/platform-one/p3.jpg"></div>
+								<div class="hscroller-item"><img src="assets/images/exhibitions/platform-one/p5.jpg"></div>
+								<div class="hscroller-item"><img src="assets/images/exhibitions/platform-one/p4.jpg"></div>
+							</div>
+						</div>
 
-                <!-- Additional Images (Default Screens) -->
-                <div class="content-element image-grid-layout non-mobile" style="padding-bottom: 28px;">
-                    <div class="grid-item"><img src="assets/images/exhibitions/blackburn/blackburn_2.png"></div>
-                    <div class="grid-item"><img src="assets/images/exhibitions/blackburn/blackburn_1.png"></div>
-                    <div class="grid-item"><img src="assets/images/exhibitions/blackburn/blackburn_3.png"></div>
-                </div>
+					</div>
 
-                <!-- Additional Images (Mobile) -->
-                <div class="image-hscroller mobile-only" style="padding-bottom: 28px;">
-                    <div class="scroll-wrapper">
-                        <div class="hscroller-item"><img src="assets/images/exhibitions/blackburn/blackburn_2.png"></div>
-                        <div class="hscroller-item"><img src="assets/images/exhibitions/blackburn/blackburn_1.png"></div>
-                        <div class="hscroller-item"><img src="assets/images/exhibitions/blackburn/blackburn_3.png"></div>
-                        <!--<div class="hscroller-item"><img src="assets/images/exhibitions/blackburn/blackburn_4.png"></div>-->
-                    </div>
-                </div>
+				</div>
 
                 <div class="divider"></div>
 
-                <!-- Postcard Art Intro -->
-                <div class="content-element text-block" style="padding-top:24px">
-                    <p class="text-block-subheading" style="margin-top: 0;">Postcard Art</p>
-                    <p class="text-block-subheading">Water Street Gallery, Todmorden</p>     
-                    <p class="text-block-subheading">Nov 2024 - Jan 2025</p>                        
-                    <p class="text-block-content">I created two emulsion transfers of wintery scenes for the Postcard Art call-out at Water Street Gallery. These were displayed alongside larger pieces from the Seeds of Change exhibition.</p>
-                    <p class="text-block-content">I love postcard-sized art because it's accessible, affordable and welcomes a broad range of styles and mediums.</p>
-                    <p class="text-block-content">Emulsion transfers can have an ethereal, worn quality to them. For me, they show how photographs can represent faded memories. I think transfers work well as small-scale pieces because, when leaning in and looking closely, viewers will notice the layers, marks and textures created naturally through the process.</p>
-                </div>
+				<!-- Blackburn Museum - Accordian -->
+				<div class="accordian">
 
-                <!-- Additional Images (Default Screens) -->
-                <div class="content-element recent-work-image-grid non-mobile">
-                    <div><img src="assets/images/exhibitions/water-street-gallery/ws2.jpg"></div>
-                    <div><img src="assets/images/exhibitions/water-street-gallery/ws1.jpg"></div>
-                    <div><img src="assets/images/exhibitions/water-street-gallery/ws4.jpg"></div>
-                </div>
+					<div class="header">
+						<img class="icon" src="assets/icons/chevron-down.svg" height="20">
+						<div class="title">Blackburn Museum & Art Gallery, Open Exhibition 2025</div>
+					</div>
+					<div class="content">
 
-                <!-- Additional Images (Mobile) -->
-                <div class="image-hscroller mobile-only">
-                    <div class="scroll-wrapper">
-                        <div class="hscroller-item"><img src="assets/images/exhibitions/water-street-gallery/ws1.jpg"></div>
-                        <div class="hscroller-item"><img src="assets/images/exhibitions/water-street-gallery/ws2.jpg"></div>
-                        <div class="hscroller-item"><img src="assets/images/exhibitions/water-street-gallery/ws3.jpg"></div>
-                        <div class="hscroller-item"><img src="assets/images/exhibitions/water-street-gallery/ws4.jpg"></div>
-                    </div>
-                </div>
+						<!-- Blackburn Open Exhibition Intro -->
+						<div class="content-element text-block" style="padding-top:24px">
+							<p class="text-block-subheading">Blackburn Museum & Art Gallery</p>     
+							<p class="text-block-subheading">Jan - March 2025</p>                        
+							<p class="text-block-content">My acrylic painting of my Nan's living room was included in the BM&AG 2025 Open Exhibition. This piece is special to me because her house has been such a stable and consistent place throughout my life, but I also think it's a familiar and comforting scene that many people can recognise or identify with in their own ways.</p>
+						</div>
+
+						<!-- Additional Images (Default Screens) -->
+						<div class="content-element image-grid-layout non-mobile" style="padding-bottom: 28px;">
+							<div class="grid-item"><img src="assets/images/exhibitions/blackburn/blackburn_2.png"></div>
+							<div class="grid-item"><img src="assets/images/exhibitions/blackburn/blackburn_1.png"></div>
+							<div class="grid-item"><img src="assets/images/exhibitions/blackburn/blackburn_3.png"></div>
+						</div>
+
+						<!-- Additional Images (Mobile) -->
+						<div class="image-hscroller mobile-only" style="padding-bottom: 28px;">
+							<div class="scroll-wrapper">
+								<div class="hscroller-item"><img src="assets/images/exhibitions/blackburn/blackburn_2.png"></div>
+								<div class="hscroller-item"><img src="assets/images/exhibitions/blackburn/blackburn_1.png"></div>
+								<div class="hscroller-item"><img src="assets/images/exhibitions/blackburn/blackburn_3.png"></div>
+								<!--<div class="hscroller-item"><img src="assets/images/exhibitions/blackburn/blackburn_4.png"></div>-->
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+
+                <div class="divider"></div>
+
+				<!-- Water Street Gallery - Accordian -->
+				<div class="accordian">
+
+					<div class="header">
+						<img class="icon" src="assets/icons/chevron-down.svg" height="20">
+						<div class="title">Water Street Gallery, Postcard Art exhibition</div>
+					</div>
+					<div class="content">
+
+						<!-- Postcard Art Intro -->
+						<div class="content-element text-block" style="padding-top:24px">
+							<p class="text-block-subheading">Water Street Gallery, Todmorden</p>     
+							<p class="text-block-subheading">Nov 2024 - Jan 2025</p>                        
+							<p class="text-block-content">I created two emulsion transfers of wintery scenes for the Postcard Art call-out at Water Street Gallery. These were displayed alongside larger pieces from the Seeds of Change exhibition.</p>
+							<p class="text-block-content">I love postcard-sized art because it's accessible, affordable and welcomes a broad range of styles and mediums.</p>
+							<p class="text-block-content">Emulsion transfers can have an ethereal, worn quality to them. For me, they show how photographs can represent faded memories. I think transfers work well as small-scale pieces because, when leaning in and looking closely, viewers will notice the layers, marks and textures created naturally through the process.</p>
+						</div>
+
+						<!-- Additional Images (Default Screens) -->
+						<div class="content-element recent-work-image-grid non-mobile">
+							<div><img src="assets/images/exhibitions/water-street-gallery/ws2.jpg"></div>
+							<div><img src="assets/images/exhibitions/water-street-gallery/ws1.jpg"></div>
+							<div><img src="assets/images/exhibitions/water-street-gallery/ws4.jpg"></div>
+						</div>
+
+						<!-- Additional Images (Mobile) -->
+						<div class="image-hscroller mobile-only">
+							<div class="scroll-wrapper">
+								<div class="hscroller-item"><img src="assets/images/exhibitions/water-street-gallery/ws1.jpg"></div>
+								<div class="hscroller-item"><img src="assets/images/exhibitions/water-street-gallery/ws2.jpg"></div>
+								<div class="hscroller-item"><img src="assets/images/exhibitions/water-street-gallery/ws3.jpg"></div>
+								<div class="hscroller-item"><img src="assets/images/exhibitions/water-street-gallery/ws4.jpg"></div>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
 
             </div>
 
@@ -373,6 +542,7 @@
             <ul>
                 <li><a href="/">About</a></li>
                 <li><a href="/updates">Updates</a></li>
+                <li><a href="/mywork">My Work</a></li>
                 <li><a href="/printshop">Print Shop</a></li>
                 <li><a href="/contact">Contact</a></li>
             </ul>
@@ -386,6 +556,36 @@
         </div>
 
     </div>
+
+	<script>
+
+		(function loadAccordians() {
+
+			let accordians = document.querySelectorAll('.accordian .header');
+			for(let i = 0; i<accordians.length; i++){
+
+				accordians[i].addEventListener('click', function() {
+
+					// Dom Elements - Accordian and Content
+					let accordian = this.parentElement;
+					let content = this.nextElementSibling;
+
+					// Update Accordian Class
+					accordian.classList.toggle('active')
+
+					// Update Content Max Height
+					if (content.style.maxHeight) {
+						content.style.maxHeight = null;
+					} else {
+						content.style.maxHeight = content.scrollHeight + "px";
+					}
+
+				})
+			}
+
+		})()
+
+	</script>
 
 </body>
 </html>
