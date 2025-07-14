@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /cart.html
+Allow: /
+
+Sitemap: https://izzysempill.com/sitemap.xml
