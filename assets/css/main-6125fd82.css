@@ -66,6 +66,10 @@ h1, h2, h3 {
 	margin-right: 0;
 }
 
+.mt-20 {
+	margin-top: 20px;
+}
+
 
 /*
  * Helpers
@@ -73,6 +77,10 @@ h1, h2, h3 {
 
 .d-flex {
 	display: flex;
+}
+
+.d-block {
+	display: block;
 }
 
 .text-align-center {
