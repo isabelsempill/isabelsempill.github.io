@@ -2,4 +2,4 @@ User-agent: *
 Disallow: /cart.html
 Allow: /
 
-Sitemap: https://izzysempill.com/sitemap.xml
+Sitemap: https://shop.izzysempill.com/sitemap.xml

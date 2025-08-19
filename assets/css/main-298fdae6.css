@@ -103,10 +103,9 @@ h1, h2, h3 {
 
 #topbar {
     text-align: center;
-    padding: 20px;
+    padding: 0 20px;
     background-color: white;
-    border-bottom: 1px solid var(--font-grey-border);
-    height: 67px;
+    height: 56px;
     box-sizing: border-box;
 }
 
@@ -119,7 +118,7 @@ h1, h2, h3 {
 
 #topbar .content-wrapper .mobile-options {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 
 #topbar .content-wrapper .mobile-options .burger-menu {
