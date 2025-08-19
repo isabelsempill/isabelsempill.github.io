@@ -113,8 +113,8 @@ h1, h2, h3 {
 #topbar .content-wrapper {
     display: flex;
     justify-content: space-between;
-    max-width: var(--layout-max-width);
-    margin: 0 auto;
+    /*max-width: var(--layout-max-width);
+    margin: 0 auto;*/
 }
 
 #topbar .content-wrapper .mobile-options {
@@ -124,13 +124,6 @@ h1, h2, h3 {
 
 #topbar .content-wrapper .mobile-options .burger-menu {
     cursor: pointer;
-}
-
-#topbar .content-wrapper {
-    display: flex;
-    justify-content: space-between;
-    max-width: var(--layout-max-width);
-    margin: 0 auto;
 }
 
 #topbar .content-wrapper .logo {
